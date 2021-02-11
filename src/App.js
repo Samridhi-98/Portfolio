@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
-import { Grid, Sticky } from "semantic-ui-react";
+import { Grid } from "semantic-ui-react";
 import 'semantic-ui-css/semantic.min.css';
 
 import Sidebar from "./components/Sidebar";
