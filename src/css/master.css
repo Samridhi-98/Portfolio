@@ -1,0 +1,84 @@
+.sidebar {
+    color: white !important;
+    margin-top: 15vh !important;
+}
+
+.sidebar .header {
+    color: white !important;
+    margin-bottom: 1.5vh !important;
+}
+
+.sidebar .menu1 {
+    /* margin-top: 1vh !important; */
+    margin-bottom: 2vh !important;
+    text-align: center !important;
+}
+
+.sidebar .menu2 {
+    margin-top: 5vh !important;
+    margin-bottom: 1vh !important;
+    text-align: center;
+}
+
+.sidebar .ico1 {
+    margin: 2vh !important;
+    font-size: 2em !important;
+    color: white !important;
+}
+
+.sidebar .ico2 {
+    /* margin-top: 5vh !important; */
+    margin-left: 2vh !important;
+    margin-right: 2vh !important;
+    margin-bottom: 4vh !important;
+    font-size: 2em !important;
+    color: white !important;
+}
+
+
+/* .sidebar a{
+    text-decoration: none !important;
+} */
+
+
+/* HOME */
+
+.home .header {
+    margin-bottom: 1em !important;
+}
+
+.home .icons {
+    margin-top: 0.5em !important;
+    color: white !important;
+    font-size: x-large !important;
+}
+
+
+/* Education */
+
+.education .header {
+    margin-bottom: 1em !important;
+}
+
+
+/* WorkEx */
+
+.workx .header {
+    margin-bottom: 1em !important;
+}
+
+
+/*About */
+
+.about .header {
+    margin-bottom: 1vh !important;
+}
+
+.about .desc {
+    text-align: justify !important;
+    font-size: 15px !important;
+}
+
+.about .chart {
+    margin-top: 2vh !important;
+}
