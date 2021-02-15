@@ -78,6 +78,8 @@ class About extends React.Component {
             to solve real-life problems. Apart from that I also love to guide
             and mentor newbies. I'm currently into Web Development and
             working on my Data Structures and Algorithms skills.
+            Seeking an opportunity to pursue a suitable role to upgrade , learn and adapt myself to meet the
+            requirements of a company , a competitive and challenging environment where I can serve the organization and establish a career for myself.
           </Segment>
         </div>
         <div>

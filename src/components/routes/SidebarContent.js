@@ -11,6 +11,9 @@ import "../../css/master.css";
 // Image
 //import profile from "../../images/Samridhi_Profile.jpeg";
 import profile from "../../images/my_profile.jpeg";
+//Typewriter
+import Typewriter from "typewriter-effect";
+
 class SidebarContent extends React.Component {
   render() {
     return (
@@ -20,7 +23,20 @@ class SidebarContent extends React.Component {
           <Header as="h2" textAlign="center" className="header">
             Samriddhi Agrawal
             <Header.Subheader className="header">
-              Enthusiastic Learner
+              <Typewriter
+                options={{
+                  strings: ["Full Stack Developer", "Enthusiastic Learner"],
+                  autoStart: true,
+                  loop: true
+                }}
+                onInit={
+                  (typewriter) => {
+                    typewriter
+                      .pauseFor(2000)
+                      .deleteAll()
+                      .start();
+                  }}
+              />
             </Header.Subheader>
           </Header>
           <div className="menu1">

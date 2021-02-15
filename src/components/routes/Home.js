@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Grid, Header, Icon } from "semantic-ui-react";
+import { Card, Grid, Item, Header, Icon, Segment } from "semantic-ui-react";
 import Chart from "../Chart";
 class Home extends React.Component {
   constructor() {
@@ -14,11 +14,11 @@ class Home extends React.Component {
   getChartData() {
     this.setState({
       chartData: {
-        labels: ["C++", "MongoDB", "Express", "React", "Nodejs"],
+        labels: ["", "Javascript", "HTML", "CSS"],
         datasets: [
           {
             label: "Most used languages",
-            data: [20, 20, 20, 20, 20],
+            data: [0, 8, 12, 15],
             backgroundColor: [
               "rgba(255, 99, 132, 0.6)",
               "rgba(54, 162, 235, 0.6)",
@@ -41,11 +41,11 @@ class Home extends React.Component {
             Projects
           </Header>
         </div>
-        <Card.Group>
+        {/* <Card.Group>
           <Card fluid raised color="red">
             <Card.Content>
               <Grid columns={2} stackable>
-                <Grid.Column>
+                <Grid.Column width={11}>
                   <Card.Header>Project 01</Card.Header>
                   <Card.Meta>Jun2020-July2020</Card.Meta>
                   <Card.Description>
@@ -54,73 +54,61 @@ class Home extends React.Component {
                     Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
                     Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
                     Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                    Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                    Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                    Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                   
                     <div className="icons">
                       <a href="https://github.com/Samridhi-98">
-                        <Icon name="github" className="ico1"></Icon>
+                        <Icon name="github" style={{ color: "black" }}></Icon>
                       </a>
                       <a href="https://www.linkedin.com/in/samridhi-agrawal-1713201ab/">
-                        <Icon name="linkedin" className="ico1"></Icon>
+                        <Icon name="globe" style={{ color: "black" }}></Icon>
                       </a>
                     </div>
                   </Card.Description>
                 </Grid.Column>
-                <Grid.Column>
+                <Grid.Column width={5}>
                   <Chart
                     className="chart"
                     type='1'
                     chartData={this.state.chartData}
-                    // text="Technology Used"
                     displayTitle={false}
                   />
                 </Grid.Column>
               </Grid>
             </Card.Content>
           </Card>
-          {/* <Card fluid raised color="blue">
-            <Card.Content>
-              <Card.Header>Project 01</Card.Header>
-              <Card.Meta>Jun2020-July2020</Card.Meta>
-              <Card.Description>
-                Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                Loremipsum Loremipsum
-              </Card.Description>
-            </Card.Content>
-          </Card>
-          <Card fluid raised color="green">
-            <Card.Content>
-              <Card.Header>Project 01</Card.Header>
-              <Card.Meta>Jun2020-July2020</Card.Meta>
-              <Card.Description>
-                Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                Loremipsum Loremipsum
-              </Card.Description>
-            </Card.Content>
-          </Card>
-          <Card fluid raised color="red">
-            <Card.Content>
-              <Card.Header>Project 01</Card.Header>
-              <Card.Meta>Jun2020-July2020</Card.Meta>
-              <Card.Description>
-                Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                Loremipsum Loremipsum
-              </Card.Description>
-            </Card.Content>
-          </Card>
-          <Card fluid raised color="blue">
-            <Card.Content>
-              <Card.Header>Project 01</Card.Header>
-              <Card.Meta>Jun2020-July2020</Card.Meta>
-              <Card.Description>
-                Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                Loremipsum Loremipsum
-              </Card.Description>
-            </Card.Content>
-          </Card> */}
-        </Card.Group>
+        </Card.Group> */}
+        <Segment>
+          <Item.Group>
+            <Item>
+              <Item.Content>
+                <Item.Header>Project 01</Item.Header>
+                <Item.Meta>Jun2020-July2020</Item.Meta>
+                <Item.Description>
+                  Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
+                  Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
+                  Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
+                  Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
+                  Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
+                    <div className="icons">
+                    <a href="https://github.com/Samridhi-98">
+                      <Icon name="github" style={{ color: "black" }}></Icon>
+                    </a>
+                    <a href="https://www.linkedin.com/in/samridhi-agrawal-1713201ab/">
+                      <Icon name="globe" style={{ color: "black" }}></Icon>
+                    </a>
+                  </div>
+
+                </Item.Description>
+              </Item.Content>
+              <Chart
+                className="chart"
+                type='1'
+                chartData={this.state.chartData}
+                displayTitle={false}
+              />
+            </Item>
+          </Item.Group>
+        </Segment>
+
       </div>
     );
   }

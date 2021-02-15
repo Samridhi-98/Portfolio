@@ -1,6 +1,6 @@
 import React from "react";
 import { Loader } from "semantic-ui-react";
-import { Doughnut, Polar } from 'react-chartjs-2';
+import { Doughnut, HorizontalBar } from 'react-chartjs-2';
 
 class Chart extends React.Component {
     constructor(props) {
@@ -40,19 +40,27 @@ class Chart extends React.Component {
             case '1':
                 return (
                     <div>
-                        <Polar
+                        <HorizontalBar
                             data={this.state.chartData}
-                            type="horizontalBar"
                             options={{
                                 title: {
-                                    text: this.props.text,
-                                    // display: this.props.displayTile,
                                     fontSize: 25
                                 },
-                                legend: {
-                                    position: this.props.legendPosition
-                                },
                                 responsiveAnimationDuration: 2000,
+                                scales: {
+                                    xAxes: [{
+                                        gridLines: {
+                                            display: false
+                                        }
+                                    }],
+                                    yAxes: [{
+                                        categoryPercentage: 0.5,
+                                        barPercentage: 0.3,
+                                        gridLines: {
+                                            display: false
+                                        }
+                                    }]
+                                }
                             }}
                         />
                     </div>

@@ -13,6 +13,11 @@ import SidebarContent from "./routes/SidebarContent";
 // import sidebarbg2 from "../images/sidebarbg2.jpg";
 import sidebarbg from "../images/sidebarbg.jpg";
 
+//DARK MODE
+// import {ThemeProvider} from "styled-components";
+// import { GlobalStyles } from "./Globalstyle";
+// import { lightTheme, darkTheme } from "./Theme"
+
 const mql = window.matchMedia(`(min-width: 800px)`);
 let styles = {
   root: {
