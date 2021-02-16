@@ -36,19 +36,19 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home">
-        <div className="header">
+        <div className="top-part">
           <Header as="h1" dividing>
             Projects
           </Header>
         </div>
-        {/* <Card.Group>
+        <Card.Group>
           <Card fluid raised color="red">
             <Card.Content>
+              <Card.Header>Project 01</Card.Header>
               <Grid columns={2} stackable>
                 <Grid.Column width={11}>
-                  <Card.Header>Project 01</Card.Header>
                   <Card.Meta>Jun2020-July2020</Card.Meta>
-                  <Card.Description>
+                  <Card.Description className="card-content">
                     Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
                     Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
                     Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
@@ -75,9 +75,9 @@ class Home extends React.Component {
               </Grid>
             </Card.Content>
           </Card>
-        </Card.Group> */}
-        <Segment>
-          <Item.Group>
+        </Card.Group>
+        {/* <Segment raised color="blue">
+          <Item.Group divided>
             <Item>
               <Item.Content>
                 <Item.Header>Project 01</Item.Header>
@@ -88,7 +88,7 @@ class Home extends React.Component {
                   Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
                   Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
                   Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                    <div className="icons">
+                  <div className="icons">
                     <a href="https://github.com/Samridhi-98">
                       <Icon name="github" style={{ color: "black" }}></Icon>
                     </a>
@@ -107,7 +107,7 @@ class Home extends React.Component {
               />
             </Item>
           </Item.Group>
-        </Segment>
+        </Segment> */}
 
       </div>
     );

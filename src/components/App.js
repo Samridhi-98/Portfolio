@@ -13,11 +13,6 @@ import SidebarContent from "./routes/SidebarContent";
 // import sidebarbg2 from "../images/sidebarbg2.jpg";
 import sidebarbg from "../images/sidebarbg.jpg";
 
-//DARK MODE
-// import {ThemeProvider} from "styled-components";
-// import { GlobalStyles } from "./Globalstyle";
-// import { lightTheme, darkTheme } from "./Theme"
-
 const mql = window.matchMedia(`(min-width: 800px)`);
 let styles = {
   root: {
@@ -71,10 +66,11 @@ class App extends React.Component {
     };
     this.mediaQueryChanged = this.mediaQueryChanged.bind(this);
     this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
+    this.setTheme = this.setTheme.bind(this);
   }
-  componentWillMount() {
-    mql.addListener(this.mediaQueryChanged);
-  }
+  // componentWillMount() {
+  //   mql.addListener(this.mediaQueryChanged);
+  // }
 
   componentWillUnmount() {
     this.state.mql.removeListener(this.mediaQueryChanged);
@@ -88,28 +84,35 @@ class App extends React.Component {
     this.setState({ sidebarDocked: mql.matches, sidebarOpen: false });
   }
 
+  setTheme(themeName) {
+    document.getElementById("body").className = themeName;
+    localStorage.setItem("theme", themeName);
+    console.log("Theme set to: ", localStorage.getItem("theme"))
+  }
+
   render() {
     return (
       <div>
-        <Router >
-          <Sidebar
-            sidebar={
-              <SidebarContent />
-            }
-            styles={styles}
-            open={this.state.sidebarOpen}
-            docked={this.state.sidebarDocked}
-            onSetOpen={this.onSetSidebarOpen}
-          >
+        <>
+          <Router >
+            <Sidebar
+              sidebar={
+                <SidebarContent />
+              }
+              styles={styles}
+              open={this.state.sidebarOpen}
+              docked={this.state.sidebarDocked}
+              onSetOpen={this.onSetSidebarOpen}
+            >
+              {this.setTheme("charcoal")}
+              <Route path="/" exact component={Home} />
+              <Route path="/education" exact component={Education} />
+              <Route path="/work-experience" exact component={WorkEx} />
+              <Route path="/about" exact component={About} />
 
-            <Route path="/" exact component={Home} />
-            <Route path="/education" exact component={Education} />
-            <Route path="/work-experience" exact component={WorkEx} />
-            <Route path="/about" exact component={About} />
-
-          </Sidebar>
-        </Router>
-
+            </Sidebar>
+          </Router>
+        </>
       </div>
     );
   }

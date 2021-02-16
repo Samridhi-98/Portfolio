@@ -43,7 +43,7 @@
 
 /* HOME */
 
-.home .header {
+.home .top-part {
     margin-bottom: 1em !important;
 }
 
@@ -51,6 +51,14 @@
     margin-top: 0.5em !important;
     color: black !important;
     font-size: x-large !important;
+}
+
+.home .card-content {
+    margin-top: 1em !important;
+}
+
+.home .card-header {
+    font-weight: 1em !important;
 }
 
 
