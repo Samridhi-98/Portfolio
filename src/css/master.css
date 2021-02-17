@@ -36,29 +36,12 @@
 }
 
 
-/* .sidebar a{
-    text-decoration: none !important;
-} */
-
-
 /* HOME */
-
-.home .top-part {
-    margin-bottom: 1em !important;
-}
 
 .home .icons {
     margin-top: 0.5em !important;
-    color: black !important;
+    color: white !important;
     font-size: x-large !important;
-}
-
-.home .card-content {
-    margin-top: 1em !important;
-}
-
-.home .card-header {
-    font-weight: 1em !important;
 }
 
 
@@ -84,9 +67,19 @@
 
 .about .desc {
     text-align: justify !important;
-    font-size: 15px !important;
+    font-size: 20px !important;
+    line-height: 1.2em !important;
 }
 
 .about .chart {
     margin-top: 2vh !important;
+}
+
+
+/* toggle-button */
+
+.toggleButton {
+    float: right !important;
+    margin-top: 0.6vh !important;
+    padding-top: 0.5vh !important;
 }

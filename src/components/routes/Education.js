@@ -1,76 +1,117 @@
 import React from "react";
-import { Card, Header } from "semantic-ui-react";
+import { Header, Item, Image } from "semantic-ui-react";
+import sideImg from "../../images/profile.jpg";
 
-// CSS
-import "../../css/master.css";
+// Styles
+import {
+    Holder,
+    Heading,
+    Hr,
+    Card,
+    CardText,
+    CardHeader,
+    CardSubHeader,
+    CardIcon,
+} from "../dark-mode/styles";
 
-
+import Toggler from "../dark-mode/Toggler";
 
 class Education extends React.Component {
+    constructor(props) {
+        super(props);
+    }
 
+    changeTheme = () => {
+        if (this.props.theme.name === "light") {
+            console.log("theme is : ", this.props.theme);
+            this.props.handleChange("dark");
+            console.log("theme elements :", this.props.theme.body);
+        } else {
+            this.props.handleChange("light");
+        }
+    };
     render() {
         return (
-            <div className="education">
-                <div className="header">
-                    <Header as="h1" dividing >
-                        Education
-                </Header>
+            <Holder>
+                <div className="home">
+                    <div className="header">
+                        <Header as="h1">
+                            <Heading>
+                                Education
+                <Toggler changeTheme={this.changeTheme} />
+                            </Heading>
+                        </Header>
+                        <Hr />
+                    </div>
+                    <Card raised color="blue">
+                        <Item.Group divided>
+                            <Item>
+                                <Item.Content>
+                                    <CardHeader>
+                                        <Item.Header>Post Graduation</Item.Header>
+                                    </CardHeader>
+                                    <Item.Meta>
+                                        <CardSubHeader>Jun2020-July2020</CardSubHeader>
+                                    </Item.Meta>
+                                    <Item.Description>
+                                        <CardText>
+                                            Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
+                                            Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
+                                            Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
+                                            Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
+                                            Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
+                    </CardText>
+                                        <div className="icons">
+                                            <a href="https://github.com/Samridhi-98">
+                                                <CardIcon name="github"></CardIcon>
+                                            </a>
+                                            <a href="https://www.linkedin.com/in/samridhi-agrawal-1713201ab/">
+                                                <CardIcon name="globe"></CardIcon>
+                                            </a>
+                                        </div>
+                                    </Item.Description>
+                                </Item.Content>
+                                <Image size="small" src={sideImg}></Image>
+                            </Item>
+                        </Item.Group>
+                    </Card>
+                    <Card raised color="blue">
+                        <Item.Group divided>
+                            <Item>
+                                <Item.Content>
+                                    <CardHeader>
+                                        <Item.Header>Undergraduation</Item.Header>
+                                    </CardHeader>
+                                    <Item.Meta>
+                                        <CardSubHeader>Jun2020-July2020</CardSubHeader>
+                                    </Item.Meta>
+                                    <Item.Description>
+                                        <CardText>
+                                            Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
+                                            Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
+                                            Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
+                                            Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
+                                            Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
+                    </CardText>
+                                        <div className="icons">
+                                            <a href="https://github.com/Samridhi-98">
+                                                <CardIcon name="github"></CardIcon>
+                                            </a>
+                                            <a href="https://www.linkedin.com/in/samridhi-agrawal-1713201ab/">
+                                                <CardIcon name="globe"></CardIcon>
+                                            </a>
+                                        </div>
+                                    </Item.Description>
+                                </Item.Content>
+                                <Image size="small" src={sideImg}></Image>
+                            </Item>
+                        </Item.Group>
+                    </Card>
                 </div>
-                <Card.Group>
-                    <Card fluid raised color="red">
-                        <Card.Content>
-                            <Card.Header>Project 01</Card.Header>
-                            <Card.Meta>Jun2020-July2020</Card.Meta>
-                            <Card.Description>
-                                Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                                Loremipsum Loremipsum
-                </Card.Description>
-                        </Card.Content>
-                    </Card>
-                    <Card fluid raised color="blue">
-                        <Card.Content>
-                            <Card.Header>Project 01</Card.Header>
-                            <Card.Meta>Jun2020-July2020</Card.Meta>
-                            <Card.Description>
-                                Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                                Loremipsum Loremipsum
-                </Card.Description>
-                        </Card.Content>
-                    </Card>
-                    <Card fluid raised color="green">
-                        <Card.Content>
-                            <Card.Header>Project 01</Card.Header>
-                            <Card.Meta>Jun2020-July2020</Card.Meta>
-                            <Card.Description>
-                                Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                                Loremipsum Loremipsum
-                </Card.Description>
-                        </Card.Content>
-                    </Card>
-                    <Card fluid raised color="red">
-                        <Card.Content>
-                            <Card.Header>Project 01</Card.Header>
-                            <Card.Meta>Jun2020-July2020</Card.Meta>
-                            <Card.Description>
-                                Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                                Loremipsum Loremipsum
-                </Card.Description>
-                        </Card.Content>
-                    </Card>
-                    <Card fluid raised color="blue">
-                        <Card.Content>
-                            <Card.Header>Project 01</Card.Header>
-                            <Card.Meta>Jun2020-July2020</Card.Meta>
-                            <Card.Description>
-                                Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                                Loremipsum Loremipsum
-                </Card.Description>
-                        </Card.Content>
-                    </Card>
-                </Card.Group>
-            </div>
+            </Holder>
         );
     }
 }
+
 
 export default Education;

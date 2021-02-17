@@ -1,6 +1,6 @@
 import React from "react";
-import { Header, Item } from "semantic-ui-react";
-import Chart from "../Chart";
+import { Header, Item, Image } from "semantic-ui-react";
+import sideImg from "../../images/profile.jpg";
 // Styles
 import {
   Holder,
@@ -12,41 +12,14 @@ import {
   CardSubHeader,
   CardIcon,
 } from "../dark-mode/styles";
-// dark mode toggler
+
 import Toggler from "../dark-mode/Toggler";
 
-class Home extends React.Component {
+class Contribution extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      chartData: {},
-    };
   }
-  componentWillMount() {
-    this.getChartData();
-  }
-  getChartData() {
-    this.setState({
-      chartData: {
-        labels: ["", "Javascript", "HTML", "CSS"],
-        datasets: [
-          {
-            label: "Most used languages",
-            data: [0, 13, 12, 15],
-            backgroundColor: [
-              "rgba(255, 99, 132, 0.6)",
-              "rgba(54, 162, 235, 0.6)",
-              "rgba(255, 206, 86, 0.6)",
-              "rgba(75, 192, 192, 0.6)",
-              "rgba(153, 102, 255, 0.6)",
-              "rgba(255, 159, 64, 0.6)",
-              "rgba(255, 99, 132, 0.6)",
-            ],
-          },
-        ],
-      },
-    });
-  }
+
   changeTheme = () => {
     if (this.props.theme.name === "light") {
       console.log("theme is : ", this.props.theme);
@@ -63,7 +36,7 @@ class Home extends React.Component {
           <div className="header">
             <Header as="h1">
               <Heading>
-                Project
+                OpenSource
                 <Toggler changeTheme={this.changeTheme} />
               </Heading>
             </Header>
@@ -74,7 +47,7 @@ class Home extends React.Component {
               <Item>
                 <Item.Content>
                   <CardHeader>
-                    <Item.Header>Project 01</Item.Header>
+                    <Item.Header>Contribution 1</Item.Header>
                   </CardHeader>
                   <Item.Meta>
                     <CardSubHeader>Jun2020-July2020</CardSubHeader>
@@ -97,21 +70,17 @@ class Home extends React.Component {
                     </div>
                   </Item.Description>
                 </Item.Content>
-                <Chart
-                  className="chart"
-                  type="1"
-                  chartData={this.state.chartData}
-                  displayTitle={false}
-                />
+                <Image size="small" src={sideImg}></Image>
               </Item>
             </Item.Group>
           </Card>
+
           <Card raised color="blue">
             <Item.Group divided>
               <Item>
                 <Item.Content>
                   <CardHeader>
-                    <Item.Header>Project 02</Item.Header>
+                    <Item.Header>Contribution 2</Item.Header>
                   </CardHeader>
                   <Item.Meta>
                     <CardSubHeader>Jun2020-July2020</CardSubHeader>
@@ -134,12 +103,7 @@ class Home extends React.Component {
                     </div>
                   </Item.Description>
                 </Item.Content>
-                <Chart
-                  className="chart"
-                  type="1"
-                  chartData={this.state.chartData}
-                  displayTitle={false}
-                />
+                <Image size="small" src={sideImg}></Image>
               </Item>
             </Item.Group>
           </Card>
@@ -149,4 +113,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default Contribution;

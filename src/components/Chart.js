@@ -41,9 +41,11 @@ class Chart extends React.Component {
                 return (
                     <div>
                         <HorizontalBar
+
                             data={this.state.chartData}
                             options={{
                                 title: {
+                                    text: this.props.text,
                                     fontSize: 25
                                 },
                                 responsiveAnimationDuration: 2000,
@@ -54,8 +56,8 @@ class Chart extends React.Component {
                                         }
                                     }],
                                     yAxes: [{
-                                        categoryPercentage: 0.5,
                                         barPercentage: 0.3,
+
                                         gridLines: {
                                             display: false
                                         }

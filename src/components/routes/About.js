@@ -1,10 +1,14 @@
 import React from "react";
 import { Grid, Header, Segment } from "semantic-ui-react";
+// dark mode toggler
+import Toggler from "../dark-mode/Toggler";
+// chart.js
 import Chart from "../Chart";
-// Image
-// import sidebarbg from "../../images/sidebarbg.jpg";
+
 // CSS
 import "../../css/master.css";
+import { Holder, Heading, Hr } from "../dark-mode/styles";
+
 
 class About extends React.Component {
   constructor() {
@@ -12,6 +16,7 @@ class About extends React.Component {
     this.state = {
       chartData1: {},
       chartData2: {},
+
     };
   }
   componentWillMount() {
@@ -38,13 +43,7 @@ class About extends React.Component {
         ],
       },
       chartData2: {
-        labels: [
-          "Problem Solving",
-          "Team Work",
-          "Multitasking",
-          "Adaptation",
-
-        ],
+        labels: ["Problem Solving", "Team Work", "Multitasking", "Adaptation"],
         datasets: [
           {
             data: [20, 20, 20, 20],
@@ -63,46 +62,68 @@ class About extends React.Component {
     });
   }
 
+  changeTheme = () => {
+    if (this.props.theme.name === "light") {
+      console.log("theme is : ", this.props.theme);
+      this.props.handleChange("dark");
+      console.log("theme elements :", this.props.theme.body);
+    } else {
+      this.props.handleChange("light");
+    }
+  };
   render() {
     return (
-      <div className="about">
-        <div className="header">
-          <Header as="h1" dividing>
-            About
-          </Header>
-          <Segment basic className="desc">
-            I'm a 2nd year student pursuing Master's in Computer Applications
-            from Guru Gobind Singh Indraprastha University. I'm a passionate
-            learner who's always willing to learn and work across technologies
-            and domains. I love to explore new technologies and leverage them
-            to solve real-life problems. Apart from that I also love to guide
-            and mentor newbies. I'm currently into Web Development and
-            working on my Data Structures and Algorithms skills.
-            Seeking an opportunity to pursue a suitable role to upgrade , learn and adapt myself to meet the
-            requirements of a company , a competitive and challenging environment where I can serve the organization and establish a career for myself.
-          </Segment>
+      <Holder>
+        <div className="about">
+          <div className="header">
+            <Header as="h1" >
+              <Heading>
+                About
+                <Toggler changeTheme={this.changeTheme} />
+              </Heading>
+            </Header>
+            <Hr />
+            <Segment basic className="desc">
+              I'm a 2nd year student pursuing Master's in Computer Applications
+              🎓 from Guru Gobind Singh Indraprastha University 🏛. I'm a
+              passionate learner who's always willing to learn and work across
+              technologies and domains 💡. I love to explore new technologies
+              and leverage them to solve real-life problems ✨. Apart from that
+              I also love to guide and mentor newbies 👨🏻‍💻. I'm currently into Web
+              Development 🕸️ and working on my Data Structures and Algorithms
+              skills🤓.
+              <br />
+              <br />
+              I'm a 2nd year student pursuing Master's in Computer Applications
+              🎓 from Guru Gobind Singh Indraprastha University 🏛. I'm a
+              passionate learner who's always willing to learn and work across
+              technologies and domains 💡. I love to explore new technologies
+              and leverage them to solve real-life problems ✨. Apart from that
+              I also love to guide and mentor newbies 👨🏻‍💻. I'm currently into Web
+              Development 🕸️ and working on my Data Structures and Algorithms
+              skills🤓.
+            </Segment>
+          </div>
+          <div>
+            <Grid columns={2} divided stackable className="chart">
+              <Grid.Column>
+                <Chart
+                  className="chart"
+                  chartData={this.state.chartData1}
+                  text="Technical Skills"
+                />
+              </Grid.Column>
+              <Grid.Column>
+                <Chart
+                  className="chart"
+                  chartData={this.state.chartData2}
+                  text="Interpersonal Skills"
+                />
+              </Grid.Column>
+            </Grid>
+          </div>
         </div>
-        <div>
-          <Grid columns={2} divided stackable className="chart">
-            <Grid.Column>
-              <Chart
-                className="chart"
-                type='0'
-                chartData={this.state.chartData1}
-                text="Technical Skills"
-              />
-            </Grid.Column>
-            <Grid.Column>
-              <Chart
-                className="chart"
-                type='0'
-                chartData={this.state.chartData2}
-                text="Interpersonal Skills"
-              />
-            </Grid.Column>
-          </Grid>
-        </div>
-      </div>
+      </Holder>
     );
   }
 }
