@@ -5,10 +5,14 @@ import Typewriter from "typewriter-effect";
 //Semantic ui
 import {
   Header,
-  Icon,
   Image,
   Popup
 } from "semantic-ui-react";
+//REACT_ICONS
+import { IconContext } from "react-icons"
+import { FaGithub, FaLinkedin, FaTwitter, FaCode, FaUserGraduate, FaEdit, FaUserAlt } from "react-icons/fa"
+import { RiOpenSourceFill, RiMailFill } from "react-icons/ri"
+
 //CSS
 import "../../css/master.css";
 // Image
@@ -53,79 +57,105 @@ class SidebarContent extends React.Component {
 
           <div className="menu1">
             <a href="https://github.com/Samridhi-98">
-              <Popup
-                trigger={<Icon name="github" className="ico1"></Icon>}
-                content="Samridhi-98"
-                size="mini"
-                position='bottom center'
-              />
+              <IconContext.Provider value={{ className: "ico1" }}>
+                <Popup
+                  content="Samridhi-98"
+                  size="mini"
+                  position='bottom center'
+                  trigger={
+                    <FaGithub />
+                  }
+                />
+              </IconContext.Provider>
             </a>
             <a href="https://www.linkedin.com/in/samridhi-agrawal-1713201ab/">
-              <Popup
-                trigger={<Icon name="linkedin" className="ico1"></Icon>}
-                content="samridhi-agrawal-1713201a"
-                size="mini"
-                position='bottom center'
-              />
+              <IconContext.Provider value={{ className: "ico1" }}>
+                <Popup
+                  content="samridhi-agrawal-1713201ab"
+                  size="mini"
+                  position='bottom center'
+                  trigger={
+                    <FaLinkedin />
+                  }
+                />
+              </IconContext.Provider>
             </a>
             <a href="https://twitter.com/Samriddhi981">
-              <Popup
-                trigger={<Icon name="twitter" className="ico1"></Icon>}
-                content="Samriddhi981"
-                size="mini"
-                position='bottom center'
-              />
+              <IconContext.Provider value={{ className: "ico1" }}>
+                <Popup
+                  content="Samriddhi981"
+                  size="mini"
+                  position='bottom center'
+                  trigger={
+                    <FaTwitter />
+                  }
+                />
+              </IconContext.Provider>
             </a>
           </div>
           <div className="menu2">
             <Link to="/">
-              <Popup
-                trigger={<Icon name="code" className="ico2"></Icon>}
-                content="Projects"
-                size="mini"
-                position='bottom center'
-              />
+              <IconContext.Provider value={{ className: "ico2", size: "1.1em" }}>
+                <Popup
+                  content="Project"
+                  size="mini"
+                  position='bottom center'
+                  trigger={
+                    <FaCode />
+                  }
+                />
+              </IconContext.Provider>
+            </Link>
+            <Link to="/contribution">
+              <IconContext.Provider value={{ className: "ico2", size: "1.1em" }}>
+                <Popup
+                  trigger={<RiOpenSourceFill />}
+                  content="Open Source"
+                  size="mini"
+                  position='bottom center'
+                />
+              </IconContext.Provider>
             </Link>
             <Link to="/education">
-              <Popup
-                trigger={<Icon name="book" className="ico2"></Icon>}
-                content="Education"
-                size="mini"
-                position='bottom center'
-              />
+              <IconContext.Provider value={{ className: "ico2", size: "0.9em" }}>
+                <Popup
+                  trigger={<FaUserGraduate />}
+                  content="Education"
+                  size="mini"
+                  position='bottom center'
+                />
+              </IconContext.Provider>
             </Link>
 
             <Link to="/work-experience">
-              <Popup
-                trigger={<Icon name="edit" className="ico2"></Icon>}
-                content="Work-Experience"
-                size="mini"
-                position='bottom center'
-              />
+              <IconContext.Provider value={{ className: "ico2" }}>
+                <Popup
+                  trigger={<FaEdit />}
+                  content="Work-Experience"
+                  size="mini"
+                  position='bottom center'
+                />
+              </IconContext.Provider>
             </Link>
             <Link to="/about">
-              <Popup
-                trigger={<Icon name="user" className="ico2"></Icon>}
-                content="About"
-                size="mini"
-                position='bottom center'
-              />
-            </Link>
-            <Link to="/contribution">
-              <Popup
-                trigger={<Icon name="osi" className="ico2"></Icon>}
-                content="Open Source"
-                size="mini"
-                position='bottom center'
-              />
+              <IconContext.Provider value={{ className: "ico2", size: "0.9em" }}>
+                <Popup
+                  trigger={<FaUserAlt />}
+                  content="About"
+                  size="mini"
+                  position='bottom center'
+                />
+              </IconContext.Provider>
             </Link>
             <a href="mailto:agrawalsamriddhi83@gmail.com">
-              <Popup
-                trigger={<Icon name="mail" className="ico2"></Icon>}
-                content="agrawalsamriddhi83@gmail.com"
-                size="mini"
-                position='bottom center'
-              />
+              <IconContext.Provider value={{ className: "ico2", size: "1em" }}>
+                <Popup
+                  trigger={<RiMailFill />}
+                  content="agrawalsamriddhi83@gmail.com"
+                  size="mini"
+                  position='bottom center'
+                />
+              </IconContext.Provider>
             </a>
 
           </div>
