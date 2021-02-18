@@ -49,12 +49,8 @@ class SidebarContent extends React.Component {
                       .start();
                   }}
               />
-
             </Header.Subheader>
-
           </Header>
-
-
           <div className="menu1">
             <a href="https://github.com/Samridhi-98">
               <IconContext.Provider value={{ className: "ico1" }}>
@@ -126,7 +122,6 @@ class SidebarContent extends React.Component {
                 />
               </IconContext.Provider>
             </Link>
-
             <Link to="/work-experience">
               <IconContext.Provider value={{ className: "ico2" }}>
                 <Popup
@@ -157,7 +152,6 @@ class SidebarContent extends React.Component {
                 />
               </IconContext.Provider>
             </a>
-
           </div>
         </div>
       </div>

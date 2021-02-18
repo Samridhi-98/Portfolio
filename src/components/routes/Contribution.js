@@ -14,6 +14,7 @@ import {
 } from "../dark-mode/styles";
 
 import Toggler from "../dark-mode/Toggler";
+import Navbar from "../navbar/Navbar"
 
 class Contribution extends React.Component {
   constructor(props) {
@@ -108,6 +109,7 @@ class Contribution extends React.Component {
             </Item.Group>
           </Card>
         </div>
+        <Navbar />
       </Holder>
     );
   }

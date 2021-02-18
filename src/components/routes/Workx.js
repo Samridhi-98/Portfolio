@@ -1,6 +1,5 @@
 import React from "react";
-import { Header, Item, Image } from "semantic-ui-react";
-import sideImg from "../../images/profile.jpg";
+import { Header, Item } from "semantic-ui-react";
 // Styles
 import {
   Holder,
@@ -14,6 +13,8 @@ import {
 } from "../dark-mode/styles";
 // dark mode toggler
 import Toggler from "../dark-mode/Toggler";
+//Navbar
+import Navbar from "../navbar/Navbar"
 
 class Workx extends React.Component {
   constructor(props) {
@@ -36,14 +37,12 @@ class Workx extends React.Component {
           <div className="header">
             <Header as="h1">
               <Heading>
-                Work Experience/Achievement
+                Work Experience
                 <Toggler changeTheme={this.changeTheme} />
               </Heading>
             </Header>
             <Hr />
           </div>
-          {/* <hr/> */}
-
           <Card raised color="blue">
             <Item.Group divided>
               <Item>
@@ -71,8 +70,7 @@ class Workx extends React.Component {
                       </a>
                     </div>
                   </Item.Description>
-                </Item.Content>
-                <Image size="small" src={sideImg}></Image>
+                </Item.Content>}
               </Item>
             </Item.Group>
           </Card>
@@ -104,11 +102,11 @@ class Workx extends React.Component {
                     </div>
                   </Item.Description>
                 </Item.Content>
-                <Image size="small" src={sideImg}></Image>
               </Item>
             </Item.Group>
           </Card>
         </div>
+        <Navbar />
       </Holder>
     );
   }

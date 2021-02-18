@@ -14,6 +14,7 @@ import {
 } from "../dark-mode/styles";
 // dark mode toggler
 import Toggler from "../dark-mode/Toggler";
+import Navbar from "../navbar/Navbar"
 
 class Home extends React.Component {
   constructor(props) {
@@ -74,10 +75,10 @@ class Home extends React.Component {
               <Item>
                 <Item.Content>
                   <CardHeader>
-                    <Item.Header>Project 01</Item.Header>
+                    <Item.Header>OnlyMeal</Item.Header>
                   </CardHeader>
                   <Item.Meta>
-                    <CardSubHeader>Jun2020-July2020</CardSubHeader>
+                    <CardSubHeader>Oct 2020-Dec 2020</CardSubHeader>
                   </Item.Meta>
                   <Item.Description>
                     <CardText>
@@ -111,10 +112,121 @@ class Home extends React.Component {
               <Item>
                 <Item.Content>
                   <CardHeader>
-                    <Item.Header>Project 02</Item.Header>
+                    <Item.Header>I.M.H.U.M.A.N</Item.Header>
                   </CardHeader>
                   <Item.Meta>
-                    <CardSubHeader>Jun2020-July2020</CardSubHeader>
+                    <CardSubHeader>Sep 2020-Oct 2020</CardSubHeader>
+                  </Item.Meta>
+                  <Item.Description>
+                    <CardText>
+                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
+                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
+                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
+                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
+                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
+                    </CardText>
+                    <div className="icons">
+                      <a href="https://github.com/Samridhi-98">
+                        <CardIcon name="github"></CardIcon>
+                      </a>
+                      <a href="https://www.linkedin.com/in/samridhi-agrawal-1713201ab/">
+                        <CardIcon name="globe"></CardIcon>
+                      </a>
+                    </div>
+                  </Item.Description>
+                </Item.Content>
+                <Chart
+                  className="chart"
+                  type="1"
+                  chartData={this.state.chartData}
+                  displayTitle={false}
+                />
+              </Item>
+            </Item.Group>
+          </Card>
+          <Card raised color="blue">
+            <Item.Group divided>
+              <Item>
+                <Item.Content>
+                  <CardHeader>
+                    <Item.Header>Psychic</Item.Header>
+                  </CardHeader>
+                  <Item.Meta>
+                    <CardSubHeader>Dec 2020-Jan 2021</CardSubHeader>
+                  </Item.Meta>
+                  <Item.Description>
+                    <CardText>
+                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
+                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
+                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
+                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
+                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
+                    </CardText>
+                    <div className="icons">
+                      <a href="https://github.com/Samridhi-98">
+                        <CardIcon name="github"></CardIcon>
+                      </a>
+                      <a href="https://www.linkedin.com/in/samridhi-agrawal-1713201ab/">
+                        <CardIcon name="globe"></CardIcon>
+                      </a>
+                    </div>
+                  </Item.Description>
+                </Item.Content>
+                <Chart
+                  className="chart"
+                  type="1"
+                  chartData={this.state.chartData}
+                  displayTitle={false}
+                />
+              </Item>
+            </Item.Group>
+          </Card>
+          <Card raised color="blue">
+            <Item.Group divided>
+              <Item>
+                <Item.Content>
+                  <CardHeader>
+                    <Item.Header>Secret</Item.Header>
+                  </CardHeader>
+                  <Item.Meta>
+                    <CardSubHeader>June 2020-July 2020</CardSubHeader>
+                  </Item.Meta>
+                  <Item.Description>
+                    <CardText>
+                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
+                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
+                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
+                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
+                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
+                    </CardText>
+                    <div className="icons">
+                      <a href="https://github.com/Samridhi-98">
+                        <CardIcon name="github"></CardIcon>
+                      </a>
+                      <a href="https://www.linkedin.com/in/samridhi-agrawal-1713201ab/">
+                        <CardIcon name="globe"></CardIcon>
+                      </a>
+                    </div>
+                  </Item.Description>
+                </Item.Content>
+                <Chart
+                  className="chart"
+                  type="1"
+                  chartData={this.state.chartData}
+                  displayTitle={false}
+                />
+              </Item>
+            </Item.Group>
+          </Card>
+          <Card raised color="blue">
+            <Item.Group divided>
+              <Item>
+                <Item.Content>
+                  <CardHeader>
+                    <Item.Header>Weathering with you</Item.Header>
+                  </CardHeader>
+                  <Item.Meta>
+                    <CardSubHeader>Dec 2020-Jan 2021</CardSubHeader>
                   </Item.Meta>
                   <Item.Description>
                     <CardText>
@@ -144,6 +256,7 @@ class Home extends React.Component {
             </Item.Group>
           </Card>
         </div>
+        <Navbar />
       </Holder>
     );
   }

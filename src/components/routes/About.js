@@ -8,7 +8,7 @@ import Chart from "../Chart";
 // CSS
 import "../../css/master.css";
 import { Holder, Heading, Hr } from "../dark-mode/styles";
-
+import Navbar from "../navbar/Navbar"
 
 class About extends React.Component {
   constructor() {
@@ -123,6 +123,7 @@ class About extends React.Component {
             </Grid>
           </div>
         </div>
+        <Navbar />
       </Holder>
     );
   }
