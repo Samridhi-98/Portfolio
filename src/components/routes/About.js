@@ -1,14 +1,18 @@
 import React from "react";
+//Semantic UI
 import { Grid, Header, Segment } from "semantic-ui-react";
-// dark mode toggler
+// Dark mode toggler
 import Toggler from "../dark-mode/Toggler";
-// chart.js
+// Chart.js
 import Chart from "../Chart";
-
 // CSS
 import "../../css/master.css";
+//Dark mode
 import { Holder, Heading, Hr } from "../dark-mode/styles";
+//Navbar
 import Navbar from "../navbar/Navbar"
+//Footer
+import Footer from "../dark-mode/Footer"
 
 class About extends React.Component {
   constructor() {
@@ -64,9 +68,9 @@ class About extends React.Component {
 
   changeTheme = () => {
     if (this.props.theme.name === "light") {
-      console.log("theme is : ", this.props.theme);
+      //console.log("theme is : ", this.props.theme);
       this.props.handleChange("dark");
-      console.log("theme elements :", this.props.theme.body);
+      //console.log("theme elements :", this.props.theme.body);
     } else {
       this.props.handleChange("light");
     }
@@ -122,8 +126,9 @@ class About extends React.Component {
               </Grid.Column>
             </Grid>
           </div>
+          <Footer />
         </div>
-        <Navbar />
+        <Navbar theme={this.props.theme} />
       </Holder>
     );
   }

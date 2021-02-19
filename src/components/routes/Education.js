@@ -1,8 +1,9 @@
 import React from "react";
+//Semantic UI
 import { Header, Item } from "semantic-ui-react";
+//Navbar
 import Navbar from "../navbar/Navbar"
-
-// Styles
+// Style Component
 import {
     Holder,
     Heading,
@@ -11,10 +12,11 @@ import {
     CardText,
     CardHeader,
     CardSubHeader,
-    CardIcon,
 } from "../dark-mode/styles";
-
+//Toggler
 import Toggler from "../dark-mode/Toggler";
+//Footer
+import Footer from "../dark-mode/Footer"
 
 class Education extends React.Component {
     constructor(props) {
@@ -23,9 +25,9 @@ class Education extends React.Component {
 
     changeTheme = () => {
         if (this.props.theme.name === "light") {
-            console.log("theme is : ", this.props.theme);
+            //console.log("theme is : ", this.props.theme);
             this.props.handleChange("dark");
-            console.log("theme elements :", this.props.theme.body);
+            //console.log("theme elements :", this.props.theme.body);
         } else {
             this.props.handleChange("light");
         }
@@ -48,10 +50,10 @@ class Education extends React.Component {
                             <Item>
                                 <Item.Content>
                                     <CardHeader>
-                                        <Item.Header>Post Graduation</Item.Header>
+                                        <Item.Header>Bharati Vidyapeeth's Institute of Computer Applications and Management</Item.Header>
                                     </CardHeader>
                                     <Item.Meta>
-                                        <CardSubHeader>June 2019-May 2022</CardSubHeader>
+                                        <CardSubHeader>Aug 2019-May 2022</CardSubHeader>
                                     </Item.Meta>
                                     <Item.Description>
                                         <CardText>
@@ -60,15 +62,15 @@ class Education extends React.Component {
                                             Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
                                             Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
                                             Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                    </CardText>
-                                        <div className="icons">
+                                        </CardText>
+                                        {/* <div className="icons">
                                             <a href="https://github.com/Samridhi-98">
                                                 <CardIcon name="github"></CardIcon>
                                             </a>
                                             <a href="https://www.linkedin.com/in/samridhi-agrawal-1713201ab/">
                                                 <CardIcon name="globe"></CardIcon>
                                             </a>
-                                        </div>
+                                        </div> */}
                                     </Item.Description>
                                 </Item.Content>
                             </Item>
@@ -92,14 +94,14 @@ class Education extends React.Component {
                                             Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
                                             Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
                                         </CardText>
-                                        <div className="icons">
+                                        {/* <div className="icons">
                                             <a href="https://github.com/Samridhi-98">
                                                 <CardIcon name="github"></CardIcon>
                                             </a>
                                             <a href="https://www.linkedin.com/in/samridhi-agrawal-1713201ab/">
                                                 <CardIcon name="globe"></CardIcon>
                                             </a>
-                                        </div>
+                                        </div> */}
                                     </Item.Description>
                                 </Item.Content>
                             </Item>
@@ -123,21 +125,22 @@ class Education extends React.Component {
                                             Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
                                             Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
                                         </CardText>
-                                        <div className="icons">
+                                        {/* <div className="icons">
                                             <a href="https://github.com/Samridhi-98">
                                                 <CardIcon name="github"></CardIcon>
                                             </a>
                                             <a href="https://www.linkedin.com/in/samridhi-agrawal-1713201ab/">
                                                 <CardIcon name="globe"></CardIcon>
                                             </a>
-                                        </div>
+                                        </div> */}
                                     </Item.Description>
                                 </Item.Content>
                             </Item>
                         </Item.Group>
                     </Card>
+                    <Footer />
                 </div>
-                <Navbar />
+                <Navbar theme={this.props.theme} />
             </Holder>
         );
     }

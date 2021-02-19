@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Segment, Icon } from "semantic-ui-react";
+import { Segment, Icon, Image } from "semantic-ui-react";
 
 export const Holder = styled.body`
   padding: 2vh !important;
@@ -33,4 +33,37 @@ export const CardSubHeader = styled.h4`
 `;
 export const CardIcon = styled(Icon)`
   color: ${(props) => props.theme.text} !important;
+`;
+
+export const NoComputerImg = styled(Image)`
+  @media (max-width: 991px) {
+    display: none !important;
+  }
+`;
+export const CompFooter = styled.footer`
+  color: ${(props) => props.theme.footer} !important;
+  font-size: 2.5vh !important;
+  margin-top: 7vh !important;
+  margin-bottom: 5vh !important;
+  text-align: center !important;
+
+  @media (max-width: 991px) {
+    display: none !important;
+  }
+`;
+
+export const MobFooter = styled.footer`
+  font-size: 3vh;
+  margin-top: 7vh !important;
+  margin-bottom: 5vh !important;
+  text-align: center !important;
+
+  @media (min-width: 991px) {
+    display: none !important;
+  }
+`;
+export const FooterLink = styled.a`
+  color: ${(props) => props.theme.footer} !important;
+  padding-left: 2vh !important;
+  padding-right: 2vh !important;
 `;

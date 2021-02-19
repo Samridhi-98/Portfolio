@@ -1,5 +1,7 @@
 import React from "react";
+//Semantic UI
 import { Header, Item } from "semantic-ui-react";
+//Chart
 import Chart from "../Chart";
 // Styles
 import {
@@ -12,9 +14,13 @@ import {
   CardSubHeader,
   CardIcon,
 } from "../dark-mode/styles";
-// dark mode toggler
+// Dark mode toggler
 import Toggler from "../dark-mode/Toggler";
+//Navbar
 import Navbar from "../navbar/Navbar"
+//Footer
+import Footer from "../dark-mode/Footer"
+
 
 class Home extends React.Component {
   constructor(props) {
@@ -50,9 +56,9 @@ class Home extends React.Component {
   }
   changeTheme = () => {
     if (this.props.theme.name === "light") {
-      console.log("theme is : ", this.props.theme);
+      //console.log("theme is : ", this.props.theme);
       this.props.handleChange("dark");
-      console.log("theme elements :", this.props.theme.body);
+      //console.log("theme elements :", this.props.theme.body);
     } else {
       this.props.handleChange("light");
     }
@@ -255,8 +261,9 @@ class Home extends React.Component {
               </Item>
             </Item.Group>
           </Card>
+          <Footer />
         </div>
-        <Navbar />
+        <Navbar theme={this.props.theme} />
       </Holder>
     );
   }
