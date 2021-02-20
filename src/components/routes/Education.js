@@ -21,6 +21,25 @@ import Footer from "../dark-mode/Footer"
 class Education extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            educationData: [
+                {
+                    name: "Bharati Vidyapeeth's Institute of Computer Applications and Management",
+                    desc: "Active member and organizer of the Web development event on The Education Day.",
+                    date: "Aug 2019-May 2022",
+                },
+                {
+                    name: "Keshav Mahavidyalya",
+                    desc: "Rewarded as 'Gem of Keshav' for the class of 2016-2019 and also rewarded as 'Scholar'  for three consecutive years (2016-2019).",
+                    date: "July 2016-May 2019",
+                },
+                {
+                    name: "Sant Atulanand Convent School",
+                    desc: "Won many inter-school and intra-school competitions, also secured good position in class.",
+                    date: "April 2007-May 2016",
+                },
+            ]
+        }
     }
 
     changeTheme = () => {
@@ -33,6 +52,29 @@ class Education extends React.Component {
         }
     };
     render() {
+        let cardList = this.state.educationData.map((data) => {
+            return (
+                <Card raised color="blue">
+                    <Item.Group divided>
+                        <Item>
+                            <Item.Content>
+                                <CardHeader>
+                                    <Item.Header>{data.name}</Item.Header>
+                                </CardHeader>
+                                <Item.Meta>
+                                    <CardSubHeader>{data.date}</CardSubHeader>
+                                </Item.Meta>
+                                <Item.Description>
+                                    <CardText>
+                                        {data.desc}
+                                    </CardText>
+                                </Item.Description>
+                            </Item.Content>
+                        </Item>
+                    </Item.Group>
+                </Card>
+            )
+        })
         return (
             <Holder>
                 <div className="home">
@@ -40,104 +82,12 @@ class Education extends React.Component {
                         <Header as="h1">
                             <Heading>
                                 Education
-                <Toggler changeTheme={this.changeTheme} />
+                                <Toggler changeTheme={this.changeTheme} />
                             </Heading>
                         </Header>
                         <Hr />
                     </div>
-                    <Card raised color="blue">
-                        <Item.Group divided>
-                            <Item>
-                                <Item.Content>
-                                    <CardHeader>
-                                        <Item.Header>Bharati Vidyapeeth's Institute of Computer Applications and Management</Item.Header>
-                                    </CardHeader>
-                                    <Item.Meta>
-                                        <CardSubHeader>Aug 2019-May 2022</CardSubHeader>
-                                    </Item.Meta>
-                                    <Item.Description>
-                                        <CardText>
-                                            Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                                            Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                                            Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                                            Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                                            Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                                        </CardText>
-                                        {/* <div className="icons">
-                                            <a href="https://github.com/Samridhi-98">
-                                                <CardIcon name="github"></CardIcon>
-                                            </a>
-                                            <a href="https://www.linkedin.com/in/samridhi-agrawal-1713201ab/">
-                                                <CardIcon name="globe"></CardIcon>
-                                            </a>
-                                        </div> */}
-                                    </Item.Description>
-                                </Item.Content>
-                            </Item>
-                        </Item.Group>
-                    </Card>
-                    <Card raised color="blue">
-                        <Item.Group divided>
-                            <Item>
-                                <Item.Content>
-                                    <CardHeader>
-                                        <Item.Header>Keshav Mahavidyalya</Item.Header>
-                                    </CardHeader>
-                                    <Item.Meta>
-                                        <CardSubHeader>July 2016-May 2019</CardSubHeader>
-                                    </Item.Meta>
-                                    <Item.Description>
-                                        <CardText>
-                                            Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                                            Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                                            Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                                            Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                                            Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                                        </CardText>
-                                        {/* <div className="icons">
-                                            <a href="https://github.com/Samridhi-98">
-                                                <CardIcon name="github"></CardIcon>
-                                            </a>
-                                            <a href="https://www.linkedin.com/in/samridhi-agrawal-1713201ab/">
-                                                <CardIcon name="globe"></CardIcon>
-                                            </a>
-                                        </div> */}
-                                    </Item.Description>
-                                </Item.Content>
-                            </Item>
-                        </Item.Group>
-                    </Card>
-                    <Card raised color="blue">
-                        <Item.Group divided>
-                            <Item>
-                                <Item.Content>
-                                    <CardHeader>
-                                        <Item.Header>Sant Atulanand Convent School</Item.Header>
-                                    </CardHeader>
-                                    <Item.Meta>
-                                        <CardSubHeader>April 2002-May 2016</CardSubHeader>
-                                    </Item.Meta>
-                                    <Item.Description>
-                                        <CardText>
-                                            Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                                            Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                                            Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                                            Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                                            Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                                        </CardText>
-                                        {/* <div className="icons">
-                                            <a href="https://github.com/Samridhi-98">
-                                                <CardIcon name="github"></CardIcon>
-                                            </a>
-                                            <a href="https://www.linkedin.com/in/samridhi-agrawal-1713201ab/">
-                                                <CardIcon name="globe"></CardIcon>
-                                            </a>
-                                        </div> */}
-                                    </Item.Description>
-                                </Item.Content>
-                            </Item>
-                        </Item.Group>
-                    </Card>
+                    {cardList}
                     <Footer />
                 </div>
                 <Navbar theme={this.props.theme} />

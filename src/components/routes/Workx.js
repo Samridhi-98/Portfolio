@@ -10,7 +10,7 @@ import {
   CardText,
   CardHeader,
   CardSubHeader,
-  CardIcon,
+  // CardIcon,
   NoComputerImg
 } from "../dark-mode/styles";
 
@@ -21,7 +21,7 @@ import Navbar from "../navbar/Navbar"
 //Image
 import gssoc from "../../images/work-experience/gssoc.png"
 import postman from "../../images/work-experience/postman-badge.png"
-import spark from "../../images/work-experience/spark_foundation.png"
+import spark from "../../images/work-experience/spark.png"
 import microsoft from "../../images/work-experience/microsoft.jpg"
 import jpmorgan from "../../images/work-experience/jpmg.jpg"
 //Footer
@@ -30,6 +30,41 @@ import Footer from "../dark-mode/Footer"
 class Workx extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      images: [gssoc, spark, postman, jpmorgan, microsoft],
+      workData: [
+        {
+          id: 0,
+          name: "GirlScript Summer of Code",
+          desc: "I have been selected as a participant in GSSoC'21.Looking forward to contribute in open source.",
+          date: "March 2021-May 2021",
+        },
+        {
+          id: 1,
+          name: "Spark Foundation",
+          desc: "Joined The Spark Foundation as a web developement and designing intern under Graduate Rotational Internship Program.",
+          date: "Jan 2021-Feb 2021",
+        },
+        {
+          id: 2,
+          name: "Postman Student Expert",
+          desc: "Successfully completed the student expert program provided by Postman for API building and testing.",
+          date: "Jan 2021-Feb 2021",
+        },
+        {
+          id: 3,
+          name: "JPMG Virtual Internship",
+          desc: "Successfully managed to done all the task provided by JPMG under Software Engineering Virtual Experience.",
+          date: "June 2020-Aug 2020",
+        },
+        {
+          id: 4,
+          name: "Microsoft Virtual Internship",
+          desc: "Successfully completed all the task provided by Undergradute and Masters Asia Virtual Experience Program.",
+          date: "June 2020-July 2020",
+        }
+      ]
+    }
   }
 
   changeTheme = () => {
@@ -42,6 +77,30 @@ class Workx extends React.Component {
     }
   };
   render() {
+    let cardList = this.state.workData.map((data) => {
+      return (
+        <Card raised color="blue">
+          <Item.Group divided>
+            <Item>
+              <Item.Content>
+                <CardHeader>
+                  <Item.Header>{data.name}</Item.Header>
+                </CardHeader>
+                <Item.Meta>
+                  <CardSubHeader>{data.date}</CardSubHeader>
+                </Item.Meta>
+                <Item.Description>
+                  <CardText>
+                    {data.desc}
+                  </CardText>
+                </Item.Description>
+              </Item.Content>
+              <NoComputerImg alt={data.name} size="tiny" src={this.state.images[data.id]}></NoComputerImg>
+            </Item>
+          </Item.Group>
+        </Card>
+      )
+    })
     return (
       <Holder>
         <div className="home">
@@ -54,165 +113,7 @@ class Workx extends React.Component {
             </Header>
             <Hr />
           </div>
-          <Card raised color="blue">
-            <Item.Group divided>
-              <Item>
-                <Item.Content>
-                  <CardHeader>
-                    <Item.Header>GirlScript Summer of Code</Item.Header>
-                  </CardHeader>
-                  <Item.Meta>
-                    <CardSubHeader>March 2021-May 2021</CardSubHeader>
-                  </Item.Meta>
-                  <Item.Description>
-                    <CardText>
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                    </CardText>
-                    <div className="icons">
-                      <a href="https://github.com/Samridhi-98">
-                        <CardIcon name="github"></CardIcon>
-                      </a>
-                      <a href="https://www.linkedin.com/in/samridhi-agrawal-1713201ab/">
-                        <CardIcon name="globe"></CardIcon>
-                      </a>
-                    </div>
-                  </Item.Description>
-                </Item.Content>
-                <NoComputerImg size="small" src={gssoc}></NoComputerImg>
-              </Item>
-            </Item.Group>
-          </Card>
-          <Card raised color="blue">
-            <Item.Group divided>
-              <Item>
-                <Item.Content>
-                  <CardHeader>
-                    <Item.Header>Spark Foundation</Item.Header>
-                  </CardHeader>
-                  <Item.Meta>
-                    <CardSubHeader>Jan 2021-Feb 2021</CardSubHeader>
-                  </Item.Meta>
-                  <Item.Description>
-                    <CardText>
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                    </CardText>
-                    <div className="icons">
-                      <a href="https://github.com/Samridhi-98">
-                        <CardIcon name="github"></CardIcon>
-                      </a>
-                      <a href="https://www.linkedin.com/in/samridhi-agrawal-1713201ab/">
-                        <CardIcon name="globe"></CardIcon>
-                      </a>
-                    </div>
-                  </Item.Description>
-                </Item.Content>
-                <NoComputerImg size="small" src={spark}></NoComputerImg>
-              </Item>
-            </Item.Group>
-          </Card>
-          <Card raised color="blue">
-            <Item.Group divided>
-              <Item>
-                <Item.Content>
-                  <CardHeader>
-                    <Item.Header>Postman Student Expertn</Item.Header>
-                  </CardHeader>
-                  <Item.Meta>
-                    <CardSubHeader>Jan 2021-Feb 2021</CardSubHeader>
-                  </Item.Meta>
-                  <Item.Description>
-                    <CardText>
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                    </CardText>
-                    <div className="icons">
-                      <a href="https://github.com/Samridhi-98">
-                        <CardIcon name="github"></CardIcon>
-                      </a>
-                      <a href="https://www.linkedin.com/in/samridhi-agrawal-1713201ab/">
-                        <CardIcon name="globe"></CardIcon>
-                      </a>
-                    </div>
-                  </Item.Description>
-                </Item.Content>
-                <NoComputerImg size="small" src={postman}></NoComputerImg>
-              </Item>
-            </Item.Group>
-          </Card>
-          <Card raised color="blue">
-            <Item.Group divided>
-              <Item>
-                <Item.Content>
-                  <CardHeader>
-                    <Item.Header>JPMG Virtual Internship</Item.Header>
-                  </CardHeader>
-                  <Item.Meta>
-                    <CardSubHeader>Jan 2021-Feb 2021</CardSubHeader>
-                  </Item.Meta>
-                  <Item.Description>
-                    <CardText>
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                    </CardText>
-                    <div className="icons">
-                      <a href="https://github.com/Samridhi-98">
-                        <CardIcon name="github"></CardIcon>
-                      </a>
-                      <a href="https://www.linkedin.com/in/samridhi-agrawal-1713201ab/">
-                        <CardIcon name="globe"></CardIcon>
-                      </a>
-                    </div>
-                  </Item.Description>
-                </Item.Content>
-                <NoComputerImg size="small" src={jpmorgan}></NoComputerImg>
-              </Item>
-            </Item.Group>
-          </Card><Card raised color="blue">
-            <Item.Group divided>
-              <Item>
-                <Item.Content>
-                  <CardHeader>
-                    <Item.Header>Microsoft Virtual Internship</Item.Header>
-                  </CardHeader>
-                  <Item.Meta>
-                    <CardSubHeader>Jan 2021-Feb 2021</CardSubHeader>
-                  </Item.Meta>
-                  <Item.Description>
-                    <CardText>
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                    </CardText>
-                    <div className="icons">
-                      <a href="https://github.com/Samridhi-98">
-                        <CardIcon name="github"></CardIcon>
-                      </a>
-                      <a href="https://www.linkedin.com/in/samridhi-agrawal-1713201ab/">
-                        <CardIcon name="globe"></CardIcon>
-                      </a>
-                    </div>
-                  </Item.Description>
-                </Item.Content>
-                <NoComputerImg size="small" src={microsoft}></NoComputerImg>
-              </Item>
-            </Item.Group>
-          </Card>
+          {cardList}
           <Footer />
         </div>
         <Navbar theme={this.props.theme} />

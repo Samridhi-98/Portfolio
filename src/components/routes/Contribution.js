@@ -2,9 +2,10 @@ import React from "react";
 //Semantic UI
 import { Header, Item } from "semantic-ui-react";
 //Image
-import circuitverse from "../../images/contribution/CircuitVerse.png"
+import circuitverse from "../../images/contribution/circuitVerse1.png"
 import fossaisa from "../../images/contribution/fossasia.png"
 import semantic from "../../images/contribution/semantic.png"
+import eddiehub from "../../images/contribution/eddiehub2.jpg"
 // Styles
 import {
   Holder,
@@ -13,8 +14,6 @@ import {
   Card,
   CardText,
   CardHeader,
-  CardSubHeader,
-  CardIcon,
   NoComputerImg,
 } from "../dark-mode/styles";
 import Toggler from "../dark-mode/Toggler";
@@ -27,6 +26,32 @@ import Footer from "../dark-mode/Footer"
 class Contribution extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      images: [circuitverse, eddiehub, semantic, fossaisa,],
+      contriData: [
+        {
+          id: 0,
+          name: "Circuitverse",
+          desc: "Loremipsum Loremipsum Loremipsum Loremipsum Loremipsuoremipsum Loremipsum Loremipsum Loremipsum",
+        },
+        {
+          id: 1,
+          name: "EddieHub",
+          desc: "Loremipsum Loremipsum Loremipsum Loremipsum Loremipsuoremipsum Loremipsum Loremipsum Loremipsum",
+        },
+        {
+          id: 2,
+          name: "Semantic UI React",
+          desc: "Loremipsum Loremipsum Loremipsum Loremipsum Loremipsuoremipsum Loremipsum Loremipsum Loremipsum",
+        },
+        {
+          id: 3,
+          name: "Fossaisa",
+          desc: "Loremipsum Loremipsum Loremipsum Loremipsum Loremipsuoremipsum Loremipsum Loremipsum Loremipsum",
+        },
+      ]
+    }
+
   }
 
   changeTheme = () => {
@@ -39,6 +64,29 @@ class Contribution extends React.Component {
     }
   };
   render() {
+    let cardList = this.state.contriData.map((data) => {
+      return (
+        <Card raised color="blue">
+          <Item.Group divided>
+            <Item>
+              <Item.Content>
+                <CardHeader>
+                  <Item.Header>{data.name}</Item.Header>
+                </CardHeader>
+                <Item.Meta>
+                </Item.Meta>
+                <Item.Description>
+                  <CardText>
+                    {data.desc}
+                  </CardText>
+                </Item.Description>
+              </Item.Content>
+              <NoComputerImg alt={data.name} size="small" src={this.state.images[data.id]}></NoComputerImg>
+            </Item>
+          </Item.Group>
+        </Card>
+      )
+    })
     return (
       <Holder>
         <div className="home">
@@ -51,105 +99,7 @@ class Contribution extends React.Component {
             </Header>
             <Hr />
           </div>
-          <Card raised color="blue">
-            <Item.Group divided>
-              <Item>
-                <Item.Content>
-                  <CardHeader>
-                    <Item.Header>CircuitVerse</Item.Header>
-                  </CardHeader>
-                  <Item.Meta>
-                    {/* <CardSubHeader>Feb2021-March2021</CardSubHeader> */}
-                  </Item.Meta>
-                  <Item.Description>
-                    <CardText>
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                    </CardText>
-                    <div className="icons">
-                      <a href="https://github.com/Samridhi-98">
-                        <CardIcon name="github"></CardIcon>
-                      </a>
-                      <a href="https://www.linkedin.com/in/samridhi-agrawal-1713201ab/">
-                        <CardIcon name="globe"></CardIcon>
-                      </a>
-                    </div>
-                  </Item.Description>
-                </Item.Content>
-                <NoComputerImg size="small" src={circuitverse}></NoComputerImg>
-              </Item>
-            </Item.Group>
-          </Card>
-
-          <Card raised color="blue">
-            <Item.Group divided>
-              <Item>
-                <Item.Content>
-                  <CardHeader>
-                    <Item.Header>Fossaisa</Item.Header>
-                  </CardHeader>
-                  <Item.Meta>
-                    {/* <CardSubHeader>Jan 2021-Jan 2021</CardSubHeader> */}
-                  </Item.Meta>
-                  <Item.Description>
-                    <CardText>
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                    </CardText>
-                    <div className="icons">
-                      <a href="https://github.com/Samridhi-98">
-                        <CardIcon name="github"></CardIcon>
-                      </a>
-                      <a href="https://www.linkedin.com/in/samridhi-agrawal-1713201ab/">
-                        <CardIcon name="globe"></CardIcon>
-                      </a>
-                    </div>
-                  </Item.Description>
-                </Item.Content>
-                <NoComputerImg size="small" src={fossaisa}></NoComputerImg>
-              </Item>
-            </Item.Group>
-          </Card>
-
-          <Card raised color="blue">
-            <Item.Group divided>
-              <Item>
-                <Item.Content>
-                  <CardHeader>
-                    <Item.Header>Semantic UI React</Item.Header>
-                  </CardHeader>
-                  <Item.Meta>
-                    {/* <CardSubHeader>Jan 2021-Jan 2021</CardSubHeader> */}
-                  </Item.Meta>
-                  <Item.Description>
-                    <CardText>
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                    </CardText>
-                    <div className="icons">
-                      <a href="https://github.com/Samridhi-98">
-                        <CardIcon name="github"></CardIcon>
-                      </a>
-                      <a href="https://www.linkedin.com/in/samridhi-agrawal-1713201ab/">
-                        <CardIcon name="globe"></CardIcon>
-                      </a>
-                    </div>
-                  </Item.Description>
-                </Item.Content>
-                <NoComputerImg size="small" src={semantic}></NoComputerImg>
-              </Item>
-            </Item.Group>
-          </Card>
-
+          {cardList}
           <Footer />
         </div>
         <Navbar theme={this.props.theme} />

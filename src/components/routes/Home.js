@@ -26,32 +26,84 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      chartData: {},
+      chartData: [],
+      feedData: [
+        { lang1: "Javascript", lang2: "HTML", lang3: "CSS", l1: 89.9, l2: 7.9, l3: 2.2 },
+        { lang1: "Javascript", lang2: "HTML", lang3: "CSS", l1: 99.9, l2: 0, l3: 0 },
+        { lang1: "Javascript", lang2: "HTML", lang3: "CSS", l1: 83.1, l2: 9.1, l3: 5.7 },
+        { lang1: "Javascript", lang2: "HTML", lang3: "CSS", l1: 61.9, l2: 30.6, l3: 7.5 },
+        { lang1: "Javascript", lang2: "HTML", lang3: "CSS", l1: 8.2, l2: 85.1, l3: 6.7 },
+      ],
+
+      projectData: [
+        {
+          id: 0,
+          name: "OnlyMeal",
+          desc: "To overcome the problem of food wastage, Onlymeal provides a two way interaction between those with a food surplus and those looking for food. The data collected from this app includes nature of the food, date of expiry, location etc. This data when aggregated can be very useful for NGOs to connect the locations with surplus with those that are in need of the food.",
+          date: "Oct 2020-Dec 2020",
+          github: "https://github.com/Samridhi-98/OnlyMeal",
+          web: "https://onlymeal.herokuapp.com/"
+        },
+        {
+          id: 1,
+          name: "Psychic-Doodle",
+          desc: "While studying one might want to draw on the same page in order to make others or self understand the concept in a deeper manner. It is a browser extension that allows user to doodle over the active web page. The user can doodle with different colours,shapes and strokes.",
+          date: "Dec 2020-Jan 2021",
+          github: "https://github.com/Samridhi-98/Psychic-Doodle",
+          web: "/"
+        },
+        {
+          id: 2,
+          name: "Captcha-IMHUMAN",
+          desc: "Visually impaired citizens face a lot of problems with the CAPTCHA authentication process. In some of the applications OTP is given as an alternative but not with the rest of the apps. In some of the apps audio captcha is provided but many citizens find it difficult to decipher. To overcome this problem designed a CAPTCHA using environmental sounds.",
+          date: "Sep 2020-Oct 2020",
+          github: "https://github.com/Samridhi-98/Captcha-IMHUMAN",
+          web: "https://captcha-imhuman.herokuapp.com/"
+        },
+        {
+          id: 3,
+          name: "Secret",
+          desc: "A simple web application to share your secret anonymously. Also added google and facebook authentication feature using passport.js and used EJS for templating.",
+          date: "June 2020-July 2020",
+          github: "https://github.com/Samridhi-98/Secrets",
+          web: "/"
+        }
+      ]
     };
   }
   componentWillMount() {
     this.getChartData();
   }
   getChartData() {
-    this.setState({
-      chartData: {
-        labels: ["", "Javascript", "HTML", "CSS"],
-        datasets: [
-          {
-            label: "Most used languages",
-            data: [0, 13, 12, 15],
-            backgroundColor: [
-              "rgba(255, 99, 132, 0.6)",
-              "rgba(54, 162, 235, 0.6)",
-              "rgba(255, 206, 86, 0.6)",
-              "rgba(75, 192, 192, 0.6)",
-              "rgba(153, 102, 255, 0.6)",
-              "rgba(255, 159, 64, 0.6)",
-              "rgba(255, 99, 132, 0.6)",
-            ],
-          },
-        ],
-      },
+    let tempArray = [];
+    this.state.feedData.map((vals) => {
+      let chartVal = {
+        cData: {
+          labels: ["", vals.lang1, vals.lang2, vals.lang3],
+          datasets: [
+            {
+              label: "Most used languages",
+              data: [0, vals.l1, vals.l2, vals.l3],
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(54, 162, 235, 0.6)",
+                "rgba(255, 206, 86, 0.6)",
+                "rgba(75, 192, 192, 0.6)",
+                "rgba(153, 102, 255, 0.6)",
+                "rgba(255, 159, 64, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+              ],
+            },
+          ],
+        },
+      };
+      //console.log("chartval: ", chartVal.cData);
+      tempArray = tempArray.concat(chartVal.cData);
+    });
+    //console.log("temparray is : ", tempArray);
+    // ! setState is a async function
+    this.setState({ chartData: tempArray }, () => {
+      console.log("chartData: ", this.state.chartData);
     });
   }
   changeTheme = () => {
@@ -64,6 +116,43 @@ class Home extends React.Component {
     }
   };
   render() {
+    let cardList = this.state.projectData.map((data) => {
+      return (
+        <Card raised color="blue">
+          <Item.Group divided>
+            <Item>
+              <Item.Content>
+                <CardHeader>
+                  <Item.Header>{data.name}</Item.Header>
+                </CardHeader>
+                <Item.Meta>
+                  <CardSubHeader>{data.date}</CardSubHeader>
+                </Item.Meta>
+                <Item.Description>
+                  <CardText>
+                    {data.desc}
+                  </CardText>
+                  <div className="icons">
+                    <a href={data.github}>
+                      <CardIcon name="github"></CardIcon>
+                    </a>
+                    <a href={data.web}>
+                      <CardIcon name="globe"></CardIcon>
+                    </a>
+                  </div>
+                </Item.Description>
+              </Item.Content>
+              <Chart
+                className="chart"
+                type="1"
+                chartData={this.state.chartData[data.id]}
+                displayTitle={false}
+              />
+            </Item>
+          </Item.Group>
+        </Card>
+      );
+    });
     return (
       <Holder>
         <div className="home">
@@ -76,191 +165,7 @@ class Home extends React.Component {
             </Header>
             <Hr />
           </div>
-          <Card raised color="blue">
-            <Item.Group divided>
-              <Item>
-                <Item.Content>
-                  <CardHeader>
-                    <Item.Header>OnlyMeal</Item.Header>
-                  </CardHeader>
-                  <Item.Meta>
-                    <CardSubHeader>Oct 2020-Dec 2020</CardSubHeader>
-                  </Item.Meta>
-                  <Item.Description>
-                    <CardText>
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                    </CardText>
-                    <div className="icons">
-                      <a href="https://github.com/Samridhi-98">
-                        <CardIcon name="github"></CardIcon>
-                      </a>
-                      <a href="https://www.linkedin.com/in/samridhi-agrawal-1713201ab/">
-                        <CardIcon name="globe"></CardIcon>
-                      </a>
-                    </div>
-                  </Item.Description>
-                </Item.Content>
-                <Chart
-                  className="chart"
-                  type="1"
-                  chartData={this.state.chartData}
-                  displayTitle={false}
-                />
-              </Item>
-            </Item.Group>
-          </Card>
-          <Card raised color="blue">
-            <Item.Group divided>
-              <Item>
-                <Item.Content>
-                  <CardHeader>
-                    <Item.Header>I.M.H.U.M.A.N</Item.Header>
-                  </CardHeader>
-                  <Item.Meta>
-                    <CardSubHeader>Sep 2020-Oct 2020</CardSubHeader>
-                  </Item.Meta>
-                  <Item.Description>
-                    <CardText>
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                    </CardText>
-                    <div className="icons">
-                      <a href="https://github.com/Samridhi-98">
-                        <CardIcon name="github"></CardIcon>
-                      </a>
-                      <a href="https://www.linkedin.com/in/samridhi-agrawal-1713201ab/">
-                        <CardIcon name="globe"></CardIcon>
-                      </a>
-                    </div>
-                  </Item.Description>
-                </Item.Content>
-                <Chart
-                  className="chart"
-                  type="1"
-                  chartData={this.state.chartData}
-                  displayTitle={false}
-                />
-              </Item>
-            </Item.Group>
-          </Card>
-          <Card raised color="blue">
-            <Item.Group divided>
-              <Item>
-                <Item.Content>
-                  <CardHeader>
-                    <Item.Header>Psychic</Item.Header>
-                  </CardHeader>
-                  <Item.Meta>
-                    <CardSubHeader>Dec 2020-Jan 2021</CardSubHeader>
-                  </Item.Meta>
-                  <Item.Description>
-                    <CardText>
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                    </CardText>
-                    <div className="icons">
-                      <a href="https://github.com/Samridhi-98">
-                        <CardIcon name="github"></CardIcon>
-                      </a>
-                      <a href="https://www.linkedin.com/in/samridhi-agrawal-1713201ab/">
-                        <CardIcon name="globe"></CardIcon>
-                      </a>
-                    </div>
-                  </Item.Description>
-                </Item.Content>
-                <Chart
-                  className="chart"
-                  type="1"
-                  chartData={this.state.chartData}
-                  displayTitle={false}
-                />
-              </Item>
-            </Item.Group>
-          </Card>
-          <Card raised color="blue">
-            <Item.Group divided>
-              <Item>
-                <Item.Content>
-                  <CardHeader>
-                    <Item.Header>Secret</Item.Header>
-                  </CardHeader>
-                  <Item.Meta>
-                    <CardSubHeader>June 2020-July 2020</CardSubHeader>
-                  </Item.Meta>
-                  <Item.Description>
-                    <CardText>
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                    </CardText>
-                    <div className="icons">
-                      <a href="https://github.com/Samridhi-98">
-                        <CardIcon name="github"></CardIcon>
-                      </a>
-                      <a href="https://www.linkedin.com/in/samridhi-agrawal-1713201ab/">
-                        <CardIcon name="globe"></CardIcon>
-                      </a>
-                    </div>
-                  </Item.Description>
-                </Item.Content>
-                <Chart
-                  className="chart"
-                  type="1"
-                  chartData={this.state.chartData}
-                  displayTitle={false}
-                />
-              </Item>
-            </Item.Group>
-          </Card>
-          <Card raised color="blue">
-            <Item.Group divided>
-              <Item>
-                <Item.Content>
-                  <CardHeader>
-                    <Item.Header>Weathering with you</Item.Header>
-                  </CardHeader>
-                  <Item.Meta>
-                    <CardSubHeader>Dec 2020-Jan 2021</CardSubHeader>
-                  </Item.Meta>
-                  <Item.Description>
-                    <CardText>
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum
-                    </CardText>
-                    <div className="icons">
-                      <a href="https://github.com/Samridhi-98">
-                        <CardIcon name="github"></CardIcon>
-                      </a>
-                      <a href="https://www.linkedin.com/in/samridhi-agrawal-1713201ab/">
-                        <CardIcon name="globe"></CardIcon>
-                      </a>
-                    </div>
-                  </Item.Description>
-                </Item.Content>
-                <Chart
-                  className="chart"
-                  type="1"
-                  chartData={this.state.chartData}
-                  displayTitle={false}
-                />
-              </Item>
-            </Item.Group>
-          </Card>
+          {cardList}
           <Footer />
         </div>
         <Navbar theme={this.props.theme} />
