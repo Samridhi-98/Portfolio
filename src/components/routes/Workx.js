@@ -85,10 +85,8 @@ class Workx extends React.Component {
               <Item.Content>
                 <CardHeader>
                   <Item.Header>{data.name}</Item.Header>
-                </CardHeader>
-                <Item.Meta>
                   <CardSubHeader>{data.date}</CardSubHeader>
-                </Item.Meta>
+                </CardHeader>
                 <Item.Description>
                   <CardText>
                     {data.desc}

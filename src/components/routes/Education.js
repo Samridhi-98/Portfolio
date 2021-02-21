@@ -12,6 +12,7 @@ import {
     CardText,
     CardHeader,
     CardSubHeader,
+    SideHeader
 } from "../dark-mode/styles";
 //Toggler
 import Toggler from "../dark-mode/Toggler";
@@ -24,18 +25,21 @@ class Education extends React.Component {
         this.state = {
             educationData: [
                 {
-                    name: "Bharati Vidyapeeth's Institute of Computer Applications and Management",
+                    degree: "Master of Computer Application",
+                    name: "Bharati Vidyapeeth's Institute of Computer Applications and Management (GGSIPU)",
                     desc: "Active member and organizer of the Web development event on The Education Day.",
                     date: "Aug 2019-May 2022",
                 },
                 {
-                    name: "Keshav Mahavidyalya",
+                    degree: "Bachelor of Science",
+                    name: "Keshav Mahavidyalya (University of Delhi)",
                     desc: "Rewarded as 'Gem of Keshav' for the class of 2016-2019 and also rewarded as 'Scholar'  for three consecutive years (2016-2019).",
                     date: "July 2016-May 2019",
                 },
                 {
+                    degree: "High school and Secondary school",
                     name: "Sant Atulanand Convent School",
-                    desc: "Won many inter-school and intra-school competitions, also secured good position in class.",
+                    desc: "Participated in many inter-school and won intra-school competitions, also secured good position in class.",
                     date: "April 2007-May 2016",
                 },
             ]
@@ -59,10 +63,14 @@ class Education extends React.Component {
                         <Item>
                             <Item.Content>
                                 <CardHeader>
-                                    <Item.Header>{data.name}</Item.Header>
+                                    <Item.Header>
+                                        {data.degree}
+                                        <SideHeader>({data.date})</SideHeader>
+                                        <br />
+                                        <CardSubHeader>{data.name}</CardSubHeader>
+                                    </Item.Header>
                                 </CardHeader>
                                 <Item.Meta>
-                                    <CardSubHeader>{data.date}</CardSubHeader>
                                 </Item.Meta>
                                 <Item.Description>
                                     <CardText>
