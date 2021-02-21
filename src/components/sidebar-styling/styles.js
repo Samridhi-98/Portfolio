@@ -11,7 +11,7 @@ export const styles = {
     overflow: "hidden",
   },
   sidebar: {
-    width: 500,
+    width: 400,
     height: "100%",
     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.6)),url(${sidebarbg})`,
     backgroundSize: "cover",

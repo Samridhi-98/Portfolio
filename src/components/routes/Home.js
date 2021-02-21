@@ -99,6 +99,7 @@ class Home extends React.Component {
       };
       //console.log("chartval: ", chartVal.cData);
       tempArray = tempArray.concat(chartVal.cData);
+      return 0;
     });
     //console.log("temparray is : ", tempArray);
     // ! setState is a async function
