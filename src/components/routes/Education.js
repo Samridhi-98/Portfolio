@@ -27,7 +27,7 @@ class Education extends React.Component {
                 {
                     degree: "Master of Computer Application",
                     name: "Bharati Vidyapeeth's Institute of Computer Applications and Management (GGSIPU)",
-                    desc: "Active member and organizer of the Web development event on The Education Day.",
+                    desc: "Active member and organizer of the Web development event and HACKBVICAM on The Education Day.",
                     date: "Aug 2019-May 2022",
                 },
                 {
