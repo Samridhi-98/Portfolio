@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, BrowserRouter as Router } from "react-router-dom";
+import { Route, HashRouter as Router } from "react-router-dom";
 //Custom Routes
 import Home from "./routes/Home";
 import Education from "./routes/Education";
@@ -67,7 +67,7 @@ class App extends React.Component {
       <ThemeProvider theme={themes[this.state.theme]}>
         {/* {console.log("themeproviders: ", themes[this.state.theme])} */}
 
-
+        {/* //!OR USE: <Router basename={process.env.PUBLIC_URL}> to host it on github pages with browserruter */}
         <Router>
 
           <Sidebar
