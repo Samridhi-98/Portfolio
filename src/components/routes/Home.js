@@ -21,7 +21,7 @@ import Navbar from "../navbar/Navbar"
 //Footer
 import Footer from "../dark-mode/Footer"
 
-
+//Home Component
 class Home extends React.Component {
   constructor(props) {
     super(props);
