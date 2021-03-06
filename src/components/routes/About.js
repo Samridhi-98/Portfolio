@@ -50,7 +50,7 @@ class About extends React.Component {
         labels: ["Problem Solving", "Team Work", "Multitasking", "Adaptation"],
         datasets: [
           {
-            data: [20, 20, 20, 20],
+            data: [25, 25, 25, 25],
             backgroundColor: [
               "rgba(255, 99, 132, 0.6)",
               "rgba(54, 162, 235, 0.6)",
@@ -88,7 +88,7 @@ class About extends React.Component {
             </Header>
             <Hr />
             <Segment basic className="desc">
-              I'm a 2nd year student pursuing Master's in Computer Applications
+              I'm a 2<sup>nd</sup> year student pursuing Master's in Computer Applications
               from GGSIPU. I'm a passionate learner who's always willing to learn and work across
               technologies and domains. I love to explore new technologies
               and leverage them to solve real-life problems.

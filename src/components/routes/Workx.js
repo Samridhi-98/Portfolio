@@ -24,6 +24,7 @@ import postman from "../../images/work-experience/postman-badge.png"
 import spark from "../../images/work-experience/spark.png"
 import microsoft from "../../images/work-experience/microsoft.jpg"
 import jpmorgan from "../../images/work-experience/jpmg.jpg"
+//import cockroachdb from "../../images/work-experience/cockroachdb.png"
 //Footer
 import Footer from "../dark-mode/Footer"
 
@@ -39,6 +40,12 @@ class Workx extends React.Component {
           desc: "I have been selected as a participant in GSSoC'21.Looking forward to contribute in open source.",
           date: "March 2021-May 2021",
         },
+        // {
+        //   id: 5,
+        //   name: "Cockroachdb",
+        //   desc: "Successfully cleared the Cockroachdb basic exam.",
+        //   date: "Feb 2021-Mar 2021",
+        // },
         {
           id: 1,
           name: "Spark Foundation",
