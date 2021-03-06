@@ -40,7 +40,7 @@ class Navbar extends React.Component {
                     >
                         <IconLink to="/">
                             <IconContext.Provider
-                                value={{ className: "ico1", size: "2em" }}
+                                value={{ className: "ico1", size: "1.5em" }}
                             >
                                 <FaCode />
                             </IconContext.Provider>
@@ -54,7 +54,7 @@ class Navbar extends React.Component {
                     >
                         <IconLink to="/education">
                             <IconContext.Provider
-                                value={{ className: "ico1", size: "2em" }}
+                                value={{ className: "ico1", size: "1.5em" }}
                             >
                                 <FaUserGraduate />
                             </IconContext.Provider>
@@ -68,7 +68,7 @@ class Navbar extends React.Component {
                     >
                         <IconLink to="/work-experience">
                             <IconContext.Provider
-                                value={{ className: "ico1", size: "2em" }}
+                                value={{ className: "ico1", size: "1.5em" }}
                             >
                                 <FaEdit />
                             </IconContext.Provider>
@@ -82,7 +82,7 @@ class Navbar extends React.Component {
                     >
                         <IconLink to="/about">
                             <IconContext.Provider
-                                value={{ className: "ico1", size: "2em" }}
+                                value={{ className: "ico1", size: "1.5em" }}
                             >
                                 <FaUserAlt />
                             </IconContext.Provider>
@@ -96,7 +96,7 @@ class Navbar extends React.Component {
                     >
                         <IconLink to="/contribution">
                             <IconContext.Provider
-                                value={{ className: "ico1", size: "2em" }}
+                                value={{ className: "ico1", size: "1.5em" }}
                             >
                                 <RiOpenSourceFill />
                             </IconContext.Provider>
