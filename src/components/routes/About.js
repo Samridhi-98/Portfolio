@@ -93,6 +93,7 @@ class About extends React.Component {
               technologies and domains. I love to explore new technologies
               and leverage them to solve real-life problems.
               <br />
+
               <br />
               I'm currently into Web Development and working on my Data Structures and Algorithms
               skills.Seeking an opportunity to pursue a suitable role to upgrade , learn and adapt myself to meet the
