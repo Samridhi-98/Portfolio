@@ -13,4 +13,8 @@ A react-based portfolio web application.
 
 </p>  
 
-<h3> Demo <a><img src="https://github.com/Samridhi-98/Images/blob/master/Images/play.svg" width="2%"></a></h3>
+<h3>
+<em>
+Try it out <a target="_blank" href=""> <img src="https://github.com/Samridhi-98/Images/blob/master/Images/play.svg" width="2%"></a>
+</em>
+</h3>
