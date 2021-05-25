@@ -7,6 +7,9 @@ import fossaisa from "../../images/contribution/fossasia.png"
 import semantic from "../../images/contribution/semantic.png"
 import eddiehub from "../../images/contribution/eddiehub2.jpg"
 import hacktober from "../../images/contribution/hacktober.jpeg"
+import projectsakura from "../../images/contribution/project-sakura.png";
+import restfetch from "../../images/contribution/rest-fetch.png";
+import girlcodeit from "../../images/contribution/girlcodeit.png";
 // Styles
 import {
   Holder,
@@ -28,35 +31,45 @@ class Contribution extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      images: [circuitverse, eddiehub, semantic, fossaisa, hacktober],
+      images: [hacktober, eddiehub, fossaisa, semantic, circuitverse, restfetch, girlcodeit, projectsakura],
       contriData: [
         {
-          id: 0,
-          name: "Circuitverse",
-          desc: "Created an issue #503 and also made a PR #507 in the Interactive Book repository.",
+          id: 7,
+          name: "Project Sakura",
+          desc: "Contributed in multiple repositories of the Project Sakura (A completely free and open source custom ROM based on lineage OS wih over 100K active users) as a Full Stack developer.",
         },
         {
-          id: 1,
-          name: "EddieHub",
-          desc: "Created an issue #235 and also made a PR #236 in the Awesome github profiles repository.",
+          id: 6,
+          name: "Girl Code It",
+          desc: "Contributed on the Opportunity-Calendar project, specifically on the responsiveness and form component of the frontend and swagger documentation of the backend.",
+        },
+        {
+          id: 5,
+          name: "REST-FETCH",
+          desc: "Worked on REST-API to generate massive amount of fake data in nodejs and the browser which can be easily used during testing and development without the need for creating sample data manually.",
+        },
+        {
+          id: 4,
+          name: "Circuitverse",
+          desc: "Opened an issue for additional information and questions(#503) and also made various PRs to add MCQs for each topics in the Interactive Book repository.",
         },
         // {
-        //   id: 5,
-        //   name: "MLH Local Hack Day",
-        //   desc: "Loremipsum Loremipsum Loremipsum Loremipsum Loremipsuoremipsum Loremipsum Loremipsum Loremipsum",
+        //   id: 3,
+        //   name: "EddieHub",
+        //   desc: "Opened an issue #235 and also made a PR #236 in the Awesome github profiles repository.",
         // },
         {
           id: 2,
           name: "Semantic UI React",
-          desc: "Created an issue #4149 in the Semantic-UI-React repository.",
+          desc: "Opened an issue #4149 for inappropiate behaviour of the sticky component.",
         },
         {
-          id: 3,
+          id: 1,
           name: "Fossaisa",
-          desc: "Created an issue #6601 in the open-event-frontend repository.",
+          desc: "Opened an issue #6601 regarding inappropiate working of HCAPTCHA in the open-event-frontend repository.",
         },
         {
-          id: 4,
+          id: 0,
           name: "Hacktoberfest",
           desc: "Participated in Hacktoberfest 2020 and got merged more than 4 PRs successfully.",
         },

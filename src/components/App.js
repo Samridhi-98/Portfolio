@@ -35,12 +35,29 @@ class App extends React.Component {
 
     this.mediaQueryChanged = this.mediaQueryChanged.bind(this);
     this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
+    //KEY MAGICS
+    this.disableF12Function = this.disableF12Function.bind(this);
+    this.disableRightClickFunction = this.disableRightClickFunction.bind(this);
   }
 
+  //!---- Disable Dev Console and Right Click
+  disableF12Function(event) {
+    if (event.keyCode === 123 || event.keyCode === 73) {
+      event.preventDefault();
+    }
+  }
+  disableRightClickFunction(event) {
+    // console.log("clicked");
+    event.preventDefault();
+  }
   componentDidMount() {
     mql.addListener(this.mediaQueryChanged);
     const localTheme = window.localStorage.getItem("theme");
     localTheme ? this.setState({ theme: localTheme }) : this.setMode("light");
+    //blocking developer console.
+    document.addEventListener("keydown", this.disableF12Function, false);
+    //disabling right click
+    document.addEventListener("contextmenu", this.disableRightClickFunction, false);
   }
   setMode = (localTheme) => {
     window.localStorage.setItem("theme", localTheme);
@@ -48,6 +65,9 @@ class App extends React.Component {
   };
   componentWillUnmount() {
     this.state.mql.removeListener(this.mediaQueryChanged);
+    // removing event listener
+    document.removeEventListener("keydown", this.disableF12Function, false);
+    document.removeEventListener("contextmenu", this.disableRightClickFunction, false);
   }
 
   onSetSidebarOpen(open) {
@@ -67,7 +87,7 @@ class App extends React.Component {
       <ThemeProvider theme={themes[this.state.theme]}>
         {/* {console.log("themeproviders: ", themes[this.state.theme])} */}
 
-        {/* //!OR USE: <Router basename={process.env.PUBLIC_URL}> to host it on github pages with browserruter */}
+        {/* //!OR USE: <Router basename={process.env.PUBLIC_URL}> to host it on github pages with browserrouter */}
         <Router>
 
           <Sidebar

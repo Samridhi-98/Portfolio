@@ -98,6 +98,9 @@ class About extends React.Component {
               I'm currently into Web Development and working on my Data Structures and Algorithms
               skills.Seeking an opportunity to pursue a suitable role to upgrade , learn and adapt myself to meet the
               requirements of a company , a competitive and challenging environment where I can serve the organization and establish a career for myself.
+              <br />
+              <br />
+              <a href="https://drive.google.com/file/d/1SfUf44feKsN3_AL_wpCsDeOnTEmhEVEh/view?usp=sharing">Download resume</a>
             </Segment>
           </div>
           <div>

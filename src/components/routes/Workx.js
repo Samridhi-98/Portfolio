@@ -37,7 +37,7 @@ class Workx extends React.Component {
         {
           id: 0,
           name: "GirlScript Summer of Code",
-          desc: "I have been selected as a participant in GSSoC'21.Looking forward to contribute in open source.",
+          desc: "Among the top contributors, contributed to various open source projects with different tech-stack,created multiple SPA applications and also worked with REST-API for data handling.",
           date: "March 2021-May 2021",
         },
         // {
