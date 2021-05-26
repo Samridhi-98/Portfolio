@@ -41,7 +41,7 @@ class Home extends React.Component {
         {
           id: 5,
           name: "Git-To",
-          desc: "Plateform that allows one to find, collaborate and chat with the other like minded contributors. Also allows contributors to find projects according to their preferred tech stack and knowledge in the field.",
+          desc: "Platform that allows one to find, collaborate and chat with the other like minded contributors. Also allows contributors to find projects according to their preferred tech stack and knowledge in the field.",
           date: "Feb 2021-Mar 2021",
           github: "https://github.com/1s-0s/Gitto",
           web: "https://git-to.herokuapp.com"
