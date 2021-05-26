@@ -1,0 +1,1 @@
+//!---- Disable Dev Console and Right Click

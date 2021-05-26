@@ -1,29 +1,33 @@
 {
   "files": {
     "main.css": "/Portfolio/static/css/main.f07e9b32.chunk.css",
-    "main.js": "/Portfolio/static/js/main.78f0795a.chunk.js",
-    "main.js.map": "/Portfolio/static/js/main.78f0795a.chunk.js.map",
+    "main.js": "/Portfolio/static/js/main.cdc1a780.chunk.js",
+    "main.js.map": "/Portfolio/static/js/main.cdc1a780.chunk.js.map",
     "runtime-main.js": "/Portfolio/static/js/runtime-main.253ef531.js",
     "runtime-main.js.map": "/Portfolio/static/js/runtime-main.253ef531.js.map",
-    "static/js/2.0e43d6c1.chunk.js": "/Portfolio/static/js/2.0e43d6c1.chunk.js",
-    "static/js/2.0e43d6c1.chunk.js.map": "/Portfolio/static/js/2.0e43d6c1.chunk.js.map",
+    "static/js/2.1fba1e72.chunk.js": "/Portfolio/static/js/2.1fba1e72.chunk.js",
+    "static/js/2.1fba1e72.chunk.js.map": "/Portfolio/static/js/2.1fba1e72.chunk.js.map",
     "index.html": "/Portfolio/index.html",
     "static/css/main.f07e9b32.chunk.css.map": "/Portfolio/static/css/main.f07e9b32.chunk.css.map",
-    "static/js/2.0e43d6c1.chunk.js.LICENSE.txt": "/Portfolio/static/js/2.0e43d6c1.chunk.js.LICENSE.txt",
+    "static/js/2.1fba1e72.chunk.js.LICENSE.txt": "/Portfolio/static/js/2.1fba1e72.chunk.js.LICENSE.txt",
+    "static/js/main.cdc1a780.chunk.js.LICENSE.txt": "/Portfolio/static/js/main.cdc1a780.chunk.js.LICENSE.txt",
     "static/media/circuitVerse1.c95ee21a.png": "/Portfolio/static/media/circuitVerse1.c95ee21a.png",
     "static/media/eddiehub2.f3ef6dd4.jpg": "/Portfolio/static/media/eddiehub2.f3ef6dd4.jpg",
     "static/media/fossasia.b8797d22.png": "/Portfolio/static/media/fossasia.b8797d22.png",
+    "static/media/girlcodeit.8d3a6471.png": "/Portfolio/static/media/girlcodeit.8d3a6471.png",
     "static/media/gssoc.46927717.png": "/Portfolio/static/media/gssoc.46927717.png",
     "static/media/hacktober.1fc97051.jpeg": "/Portfolio/static/media/hacktober.1fc97051.jpeg",
     "static/media/jpmg.838b14c6.jpg": "/Portfolio/static/media/jpmg.838b14c6.jpg",
     "static/media/my_profile.5fa850f1.jpeg": "/Portfolio/static/media/my_profile.5fa850f1.jpeg",
     "static/media/postman-badge.8972c9f4.png": "/Portfolio/static/media/postman-badge.8972c9f4.png",
+    "static/media/project-sakura.1b917980.png": "/Portfolio/static/media/project-sakura.1b917980.png",
+    "static/media/rest-fetch.cb86018c.png": "/Portfolio/static/media/rest-fetch.cb86018c.png",
     "static/media/sidebarbg.e7f98b1d.jpg": "/Portfolio/static/media/sidebarbg.e7f98b1d.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.253ef531.js",
-    "static/js/2.0e43d6c1.chunk.js",
+    "static/js/2.1fba1e72.chunk.js",
     "static/css/main.f07e9b32.chunk.css",
-    "static/js/main.78f0795a.chunk.js"
+    "static/js/main.cdc1a780.chunk.js"
   ]
 }
