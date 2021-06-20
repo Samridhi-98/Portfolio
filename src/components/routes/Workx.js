@@ -24,6 +24,7 @@ import postman from "../../images/work-experience/postman-badge.png"
 import spark from "../../images/work-experience/spark.png"
 import microsoft from "../../images/work-experience/microsoft.jpg"
 import jpmorgan from "../../images/work-experience/jpmg.jpg"
+import lgmsoc from "../../images/work-experience/lgmsoc.jpg"
 //import cockroachdb from "../../images/work-experience/cockroachdb.png"
 //Footer
 import Footer from "../dark-mode/Footer"
@@ -32,10 +33,16 @@ class Workx extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      images: [gssoc, spark, postman, jpmorgan, microsoft],
+      images: [microsoft, jpmorgan, postman, spark, gssoc, lgmsoc],
       workData: [
         {
-          id: 0,
+          id: 5,
+          name: "Lets Grow More",
+          desc: "Served as a Mentor to Lets Grow More Summer of Code 2021, where helped participants from solving their doubts to assigning issues and reviewing their PRs",
+          date: "June 2021-July 2021",
+        },
+        {
+          id: 4,
           name: "GirlScript Summer of Code",
           desc: "Among the top contributors, contributed to various open source projects with different tech-stack,created multiple SPA applications and also worked with REST-API for data handling.",
           date: "March 2021-May 2021",
@@ -47,7 +54,7 @@ class Workx extends React.Component {
         //   date: "Feb 2021-Mar 2021",
         // },
         {
-          id: 1,
+          id: 3,
           name: "Spark Foundation",
           desc: "Joined The Spark Foundation as a web developement and designing intern under Graduate Rotational Internship Program.",
           date: "Jan 2021-Feb 2021",
@@ -59,13 +66,13 @@ class Workx extends React.Component {
           date: "Jan 2021-Feb 2021",
         },
         {
-          id: 3,
+          id: 1,
           name: "JPMG Virtual Internship",
           desc: "Successfully managed to done all the task provided by JPMG under Software Engineering Virtual Experience.",
           date: "June 2020-Aug 2020",
         },
         {
-          id: 4,
+          id: 0,
           name: "Microsoft Virtual Internship",
           desc: "Successfully completed all the task provided by Undergradute and Masters Asia Virtual Experience Program.",
           date: "June 2020-July 2020",
