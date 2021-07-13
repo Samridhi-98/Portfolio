@@ -100,7 +100,7 @@ class About extends React.Component {
               requirements of a company , a competitive and challenging environment where I can serve the organization and establish a career for myself.
               <br />
               <br />
-              <a href="https://drive.google.com/file/d/1K4wiIyp8i0OTkkeGnbf9OTQoWwUOhazA/view?usp=sharing" target="blank">Download resume</a>
+              <a href="https://drive.google.com/file/d/1oRfTyOvtFhPbuLzaFRQo4GhdmbgAdUhY/view?usp=sharing" target="blank">Download resume</a>
             </Segment>
           </div>
           <div>

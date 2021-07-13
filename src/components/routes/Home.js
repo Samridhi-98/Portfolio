@@ -41,7 +41,7 @@ class Home extends React.Component {
         {
           id: 5,
           name: "Git-To",
-          desc: "Platform that allows one to find, collaborate and chat with the other like minded contributors. Also allows contributors to find projects according to their preferred tech stack and knowledge in the field.",
+          desc: "Platform that allows one to find, collaborate and chat with the other like minded contributors. Also allows contributors to find projects according to their preferred tech stack and knowledge in the field. Also added GitHub OAuth2 provider functionality for 3rd-party auth and styled-component for styling.",
           date: "Feb 2021-Mar 2021",
           github: "https://github.com/1s-0s/Gitto",
           web: "https://git-to.herokuapp.com"
@@ -49,7 +49,7 @@ class Home extends React.Component {
         {
           id: 4,
           name: "OnlyMeal",
-          desc: "To overcome the problem of food wastage, Onlymeal provides a two way interaction between those with a food surplus and those looking for food. The data collected from this app includes nature of the food, date of expiry, location etc. This data when aggregated can be very useful for NGOs to connect the locations with surplus with those that are in need of the food.",
+          desc: "To overcome the problem of food wastage, Onlymeal provides a two way interaction between those with a food surplus and those looking for food. The data collected in the form of REST-API includes nature of the food, date of expiry, location etc. This data when aggregated can be very useful for NGOs to connect the locations with surplus with those that are in need of the food. Also used Redux store for state management.",
           date: "Oct 2020-Dec 2020",
           github: "https://github.com/Samridhi-98/OnlyMeal",
           web: "https://onlymeal.herokuapp.com/"
@@ -73,7 +73,7 @@ class Home extends React.Component {
         {
           id: 1,
           name: "Captcha-IMHUMAN",
-          desc: "Visually impaired citizens face a lot of problems with the CAPTCHA authentication process. In some of the applications OTP is given as an alternative but not with the rest of the apps. In some of the apps audio captcha is provided but many citizens find it difficult to decipher. To overcome this problem designed a CAPTCHA using environmental sounds.",
+          desc: "Visually impaired citizens face a lot of problems with the CAPTCHA authentication process. In some of the applications OTP is given as an alternative but not with the rest of the apps. In some of the apps audio captcha is provided but many citizens find it difficult to decipher. To overcome this problem designed a CAPTCHA using environmental sounds that uses Web Audio API and swiping feature for handheld devices.",
           date: "Sep 2020-Oct 2020",
           github: "https://github.com/Samridhi-98/Captcha-IMHUMAN",
           web: "https://captcha-imhuman.herokuapp.com/"
